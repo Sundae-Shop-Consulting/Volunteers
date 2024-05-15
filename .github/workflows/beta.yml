@@ -1,0 +1,14 @@
+name: Beta Test
+on:
+    push:
+        branches:
+            - main
+jobs:
+    beta-test:
+        name: "Beta Test"
+        uses: muselab-d2x/d2x/.github/workflows/beta-test-2gp.yml@main
+        secrets:
+            dev-hub-auth-url: "${{ secrets.DEV_HUB_AUTH_URL }}"
+            gh-email: "${{ secrets.GH_EMAIL }}"
+            github-token: "${{ secrets.GITHUB_TOKEN }}"
+            

@@ -1,0 +1,12 @@
+name: Production Release
+on:
+    workflow_dispatch:
+jobs:
+    feature-test:
+        name: "Production Release"
+        uses: 'muselab-d2x/d2x/.github/workflows/release-2gp.yml@main'
+        secrets:
+            dev-hub-auth-url: "${{ secrets.DEV_HUB_AUTH_URL }}"
+            gh-email: "${{ secrets.GH_EMAIL }}"
+            github-token: "${{ secrets.GITHUB_TOKEN }}"
+            

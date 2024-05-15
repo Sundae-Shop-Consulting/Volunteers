@@ -1,0 +1,14 @@
+name: 2GP Feature Test
+on:
+    push:
+        branches:
+            - feature/**
+            - main
+jobs:
+    feature-test:
+        name: "Feature Test"
+        uses: muselab-d2x/d2x/.github/workflows/feature-test-2gp.yml@main
+        secrets:
+            dev-hub-auth-url: "${{ secrets.DEV_HUB_AUTH_URL }}"
+            gh-email: "${{ secrets.GH_EMAIL }}"
+            github-token: "${{ secrets.GITHUB_TOKEN }}"

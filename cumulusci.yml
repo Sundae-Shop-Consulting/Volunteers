@@ -1,0 +1,30 @@
+minimum_cumulusci_version: '3.76.0'
+project:
+    name: Volunteers
+    package:
+        name: Volunteers
+        namespace: v4us
+        api_version: '58.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+    
+      
+
+tasks:
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
+
+orgs:
+    scratch:
+        beta:
+            config_file: orgs/managed.json
+        dev:
+            config_file: orgs/unmanaged.json
+        feature:
+            config_file: orgs/managed.json
+        qa:
+            config_file: orgs/managed.json
+        release:
+            config_file: orgs/managed.json

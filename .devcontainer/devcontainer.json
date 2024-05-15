@@ -1,0 +1,35 @@
+{
+    "name": "Volunteers Codespace",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "salesforcedx-bscode-apex.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "salesforce.salesforcedx-vscode",
+                "CumulusCI.cci",
+                "GitHub.copilot",
+                "robocorp.robotframework-lsp",
+                "ms-python.python"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {}
+    },
+    "remoteEnv": {
+        "DEV_HUB_AUTH_URL": "${localEnv:DEV_HUB_AUTH_URL}"},
+    "secrets": {
+        "DEV_HUB_AUTH_URL": {
+            "description": "An sfdxAuthUrl to log into the Dev Hub org with permissions for scratch org creation",
+            "documentationUrl": "https://d2x.readthedocs.io/tutorial/#secrets"
+        },
+        "CCI_GITHUB_TOKEN": {
+            "description": "A GitHub Personal Access Token with the repo scope to access other repositories as CumulusCI dependencies",
+            "documentationUrl": "https://d2x.readthedocs.io/en/latest/tutorial/#github-token"
+        }
+    }
+}
