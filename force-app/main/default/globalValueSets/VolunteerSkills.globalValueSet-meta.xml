@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accounting</fullName>
+        <default>false</default>
+        <label>Accounting</label>
+    </customValue>
+    <customValue>
+        <fullName>Animal Care</fullName>
+        <default>false</default>
+        <label>Animal Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Child Care</fullName>
+        <default>false</default>
+        <label>Child Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Cleaning</fullName>
+        <default>false</default>
+        <label>Cleaning</label>
+    </customValue>
+    <customValue>
+        <fullName>Coaching</fullName>
+        <default>false</default>
+        <label>Coaching</label>
+    </customValue>
+    <customValue>
+        <fullName>Cooking</fullName>
+        <default>false</default>
+        <label>Cooking</label>
+    </customValue>
+    <customValue>
+        <fullName>Data Entry</fullName>
+        <default>false</default>
+        <label>Data Entry</label>
+    </customValue>
+    <customValue>
+        <fullName>Event Planning</fullName>
+        <default>false</default>
+        <label>Event Planning</label>
+    </customValue>
+    <customValue>
+        <fullName>Fundraising</fullName>
+        <default>false</default>
+        <label>Fundraising</label>
+    </customValue>
+    <customValue>
+        <fullName>Information Technology</fullName>
+        <default>false</default>
+        <label>Information Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Manual Labor</fullName>
+        <default>false</default>
+        <label>Manual Labor</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Organizational Design</fullName>
+        <default>false</default>
+        <label>Organizational Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Web Development</fullName>
+        <default>false</default>
+        <label>Web Development</label>
+    </customValue>
+    <masterLabel>Volunteer Skills</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

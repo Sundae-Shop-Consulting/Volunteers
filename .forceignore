@@ -1,0 +1,35 @@
+# List files or folders below to ignore them when deploying and retrieving changes
+
+# Standard metadata
+package.xml
+
+# These metadata files are ignored when promoting (deploying)
+**/appMenus/**
+**/appSwitcher/**
+**/fieldRestrictionRules/**
+**/objectTranslations/**
+**/profiles/**
+**/profilePasswordPolicy/**
+**/profileSessionSetting/**
+**/settings/**
+**/sharingRules/**
+**/AuthProvider/**
+
+# These metadata files are ignored when pulling (retrieving)
+*.settings
+*.appMenu
+*.appSwitcher
+*.rule
+*.objectTranslation
+*.profile
+*.profilePasswordPolicy
+*.profileSessionSetting
+*.sharingRules
+*.AuthProvider
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**

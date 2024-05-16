@@ -155,9 +155,10 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Volunteer Shift</label>
     <nameField>
+        <displayFormat>Shift-{00000}</displayFormat>
         <label>Volunteer Shift Name</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Volunteer Shifts</pluralLabel>
     <searchLayouts></searchLayouts>

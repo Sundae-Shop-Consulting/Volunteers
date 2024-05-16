@@ -155,8 +155,8 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Volunteer Hours Log</label>
     <nameField>
-        <displayFormat>{00000}</displayFormat>
-        <label>Volunteer Hours Log Number</label>
+        <displayFormat>Hours-{00000}</displayFormat>
+        <label>Volunteer Hours Log Name</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
