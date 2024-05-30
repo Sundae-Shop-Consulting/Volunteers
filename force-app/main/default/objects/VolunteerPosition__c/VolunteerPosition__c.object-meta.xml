@@ -153,13 +153,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Volunteer Job</label>
+    <label>Volunteer Position</label>
     <nameField>
-        <label>Volunteer Job Name</label>
+        <label>Volunteer Position Name</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Volunteer Jobs</pluralLabel>
+    <pluralLabel>Volunteer Positions</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
