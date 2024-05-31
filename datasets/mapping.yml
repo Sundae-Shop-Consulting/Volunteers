@@ -1,0 +1,89 @@
+Insert Contact:
+  sf_object: Contact
+  fields:
+  - DoNotCall
+  - FirstName
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - LastName
+  lookups:
+    ReportsToId:
+      table:
+      - Contact
+      after: Insert Contact
+Insert Location:
+  sf_object: Location
+  fields:
+  - IsInventoryLocation
+  - IsMobile
+  - LocationType
+  - Name
+  - ShouldSyncWithOci
+  lookups:
+    ParentLocationId:
+      table:
+      - Location
+      after: Insert Location
+Insert Volunteer_Activity__c:
+  sf_object: Volunteer_Activity__c
+  fields:
+  - Description__c
+  - Name
+Insert VolunteerHoursLog__c:
+  sf_object: VolunteerHoursLog__c
+  fields:
+  - Comments__c
+  - EndDateTime__c
+  - Hours__c
+  - StartDateTime__c
+  lookups:
+    VolunteerContact__c:
+      table:
+      - Contact
+Insert VolunteerPosition__c:
+  sf_object: VolunteerPosition__c
+  fields:
+  - Description__c
+  - Duties__c
+  - MinimumAge__c
+  - Name
+  - Qualifications__c
+  - RequiredTraining__c
+  - Status__c
+  - TimeCommitment__c
+  lookups:
+    Location__c:
+      table:
+      - Location
+Insert VolunteerShift__c:
+  sf_object: VolunteerShift__c
+  fields:
+  - Description__c
+  - DesiredNumberOfVolunteers__c
+  - DurationHours__c
+  - StartDateTime__c
+  - TotalVolunteers__c
+  lookups:
+    Location__c:
+      table:
+      - Location
+Insert VolunteerActivityPosition__c:
+  sf_object: VolunteerActivityPosition__c
+  fields:
+  - NumberOfVolunteersAssigned__c
+  lookups:
+    VolunteerActivity__c:
+      table:
+      - Volunteer_Activity__c
+    VolunteerPosition__c:
+      table:
+      - VolunteerPosition__c
+Insert VolunteerAssignment__c:
+  sf_object: VolunteerAssignment__c
+  lookups:
+    VolunteerActivityPosition__c:
+      table:
+      - VolunteerActivityPosition__c
+    VolunteerShift__c:
+      table:
+      - VolunteerShift__c
