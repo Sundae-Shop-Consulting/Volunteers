@@ -38,6 +38,10 @@
                 <behavior>Readonly</behavior>
                 <field>NumberOfVolunteersNeeded__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>VolunteerActivity__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
