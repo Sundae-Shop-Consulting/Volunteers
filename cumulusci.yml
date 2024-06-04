@@ -11,10 +11,80 @@ project:
     
       
 
+
+
+flows:
+    make_community:
+        steps:
+            1:
+                task: create_community
+            2:
+                task: update_experience_cloud_OWDs
+            2.1:
+                task: util_sleep
+            3:
+                task: create_community_owner
+            4:
+                task: deploy_experience_cloud
+            5:
+                task: create_community_user
+            6:
+                task: publish_community
+            8:
+                task: snapshot_changes
+
+
+
 tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+
+    create_community:
+        description: "Creates a community with the Customer Service template"
+        class_path: cumulusci.tasks.salesforce.CreateCommunity
+        options:
+            template: Customer Service
+            name: Volunteer Community
+            url_path_prefix: volunteers
+            timeout: 60000
+            skip_existing: true
+
+    deploy_experience_cloud:
+        group: "Config"
+        description: Deploys the post-install configuration emulating a customer-created Experience Cloud
+        class_path: cumulusci.tasks.salesforce.Deploy
+        options:
+            path: unpackaged/config/experience_cloud
+
+    update_experience_cloud_OWDs:
+        class_path: cumulusci.tasks.metadata_etl.SetOrgWideDefaults
+        options:
+            org_wide_defaults:
+                - api_name: Contact
+                  internal_sharing_model: ReadWrite
+                  external_sharing_model: Private
+
+    publish_community:
+        description: Publishes the "Volunteer Community" Community in the target org using the Connect API
+        class_path: cumulusci.tasks.salesforce.PublishCommunity
+        options:
+            name: Volunteer Community
+
+
+    create_community_owner:
+        description: POSTs json files to the Composite REST API endpoint.
+        class_path: cumulusci.tasks.salesforce.composite.CompositeApi
+        options:
+            data_files:
+                - "datasets/communityowner.json"
+
+    create_community_user:
+        description: POSTs json files to the Composite REST API endpoint.
+        class_path: cumulusci.tasks.salesforce.composite.CompositeApi
+        options:
+            data_files:
+                - "datasets/communityuser.json"
 
 orgs:
     scratch:
