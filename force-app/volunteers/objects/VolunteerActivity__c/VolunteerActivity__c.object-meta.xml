@@ -129,7 +129,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Volunteer_Shift_Record_Page</content>
+        <content>Volunteer_Activity_Record_Page1</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -156,24 +156,18 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Volunteer Shift</label>
+    <label>Volunteer Activity</label>
     <nameField>
-        <displayFormat>Shift-{00000}</displayFormat>
-        <label>Volunteer Shift Name</label>
+        <label>Volunteer Activity Name</label>
         <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>Volunteer Shifts</pluralLabel>
-    <profileSearchLayouts>
-        <fields>NAME</fields>
-        <fields>VolunteerActivity__c</fields>
-        <fields>StartDateTime__c</fields>
-        <fields>DesiredNumberOfVolunteers__c</fields>
-        <fields>NumberOfVolunteersNeeded__c</fields>
-        <fields>TotalVolunteers__c</fields>
-        <profileName>System Administrator</profileName>
-    </profileSearchLayouts>
-    <searchLayouts></searchLayouts>
+    <pluralLabel>Volunteer Activities</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
