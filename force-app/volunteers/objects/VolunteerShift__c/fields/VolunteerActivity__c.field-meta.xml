@@ -4,7 +4,7 @@
     <deleteConstraint>Restrict</deleteConstraint>
     <externalId>false</externalId>
     <label>Volunteer Activity</label>
-    <referenceTo>Volunteer_Activity__c</referenceTo>
+    <referenceTo>VolunteerActivity__c</referenceTo>
     <relationshipLabel>Volunteer Shifts</relationshipLabel>
     <relationshipName>VolunteerShifts</relationshipName>
     <required>true</required>

@@ -3,7 +3,7 @@
     <fullName>VolunteerActivity__c</fullName>
     <externalId>false</externalId>
     <label>Volunteer Activity</label>
-    <referenceTo>Volunteer_Activity__c</referenceTo>
+    <referenceTo>VolunteerActivity__c</referenceTo>
     <relationshipLabel>Volunteer Activity Positions</relationshipLabel>
     <relationshipName>VolunteerActivityPositions</relationshipName>
     <relationshipOrder>0</relationshipOrder>

@@ -29,7 +29,7 @@ CREATE TABLE "VolunteerActivityPosition__c" (
 	"VolunteerPosition__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "VolunteerActivityPosition__c" VALUES('VolunteerActivityPosition__c-1','5.0','Volunteer_Activity__c-1','VolunteerPosition__c-1');
+INSERT INTO "VolunteerActivityPosition__c" VALUES('VolunteerActivityPosition__c-1','5.0','VolunteerActivity__c-1','VolunteerPosition__c-1');
 CREATE TABLE "VolunteerAssignment__c" (
 	id VARCHAR(255) NOT NULL, 
 	"VolunteerActivityPosition__c" VARCHAR(255), 
@@ -71,11 +71,11 @@ CREATE TABLE "VolunteerShift__c" (
 	"Location__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "Volunteer_Activity__c" (
+CREATE TABLE "VolunteerActivity__c" (
 	id VARCHAR(255) NOT NULL, 
 	"Description__c" VARCHAR(255), 
 	"Name" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Volunteer_Activity__c" VALUES('Volunteer_Activity__c-1','<p>Ongoing activity for office related tasks</p>','Office Support');
+INSERT INTO "VolunteerActivity__c" VALUES('VolunteerActivity__c-1','<p>Ongoing activity for office related tasks</p>','Office Support');
 COMMIT;

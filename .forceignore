@@ -97,11 +97,12 @@ package.xml
 *AuraTest*
 *Aura_Test1*
 *MDF_Claim_Request_Crt*
-*cbVolunteer_Community*
 *Default_Navigation1*
 *Default1*
 *CommunityOwner*
 *Contact.All*
+*VolunteerActivity2*
+*Community*
 
 
 # LWC configuration files

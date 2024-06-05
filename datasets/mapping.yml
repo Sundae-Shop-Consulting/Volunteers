@@ -24,8 +24,8 @@ Insert Location:
       table:
       - Location
       after: Insert Location
-Insert Volunteer_Activity__c:
-  sf_object: Volunteer_Activity__c
+Insert VolunteerActivity__c:
+  sf_object: VolunteerActivity__c
   fields:
   - Description__c
   - Name
@@ -74,7 +74,7 @@ Insert VolunteerActivityPosition__c:
   lookups:
     VolunteerActivity__c:
       table:
-      - Volunteer_Activity__c
+      - VolunteerActivity__c
     VolunteerPosition__c:
       table:
       - VolunteerPosition__c
