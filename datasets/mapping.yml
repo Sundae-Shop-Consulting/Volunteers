@@ -1,16 +1,12 @@
-Insert Contact:
-  sf_object: Contact
+Insert Account:
+  sf_object: Account
   fields:
-  - DoNotCall
-  - FirstName
-  - HasOptedOutOfEmail
-  - HasOptedOutOfFax
-  - LastName
+  - Name
   lookups:
-    ReportsToId:
+    ParentId:
       table:
-      - Contact
-      after: Insert Contact
+      - Account
+      after: Insert Account
 Insert Location:
   sf_object: Location
   fields:
@@ -24,22 +20,27 @@ Insert Location:
       table:
       - Location
       after: Insert Location
-Insert VolunteerActivity__c:
-  sf_object: VolunteerActivity__c
+Insert VolunteerEvent__c:
+  sf_object: VolunteerEvent__c
   fields:
   - Description__c
   - Name
-Insert VolunteerHoursLog__c:
-  sf_object: VolunteerHoursLog__c
+Insert Contact:
+  sf_object: Contact
   fields:
-  - Comments__c
-  - EndDateTime__c
-  - Hours__c
-  - StartDateTime__c
+  - DoNotCall
+  - FirstName
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - LastName
   lookups:
-    VolunteerContact__c:
+    AccountId:
+      table:
+      - Account
+    ReportsToId:
       table:
       - Contact
+      after: Insert Contact
 Insert VolunteerPosition__c:
   sf_object: VolunteerPosition__c
   fields:
@@ -55,6 +56,48 @@ Insert VolunteerPosition__c:
     Location__c:
       table:
       - Location
+Insert VolunteerActivity__c:
+  sf_object: VolunteerActivity__c
+  fields:
+  - Description__c
+  - MaximumVolunteersAllowed__c
+  - MinimumVolunteersNeeded__c
+  - Name
+  - VolunteersAssigned__c
+  lookups:
+    Location__c:
+      table:
+      - Location
+    VolunteerEvent__c:
+      table:
+      - VolunteerEvent__c
+    VolunteerPosition__c:
+      table:
+      - VolunteerPosition__c
+Insert VolunteerPositionAssignment__c:
+  sf_object: VolunteerPositionAssignment__c
+  lookups:
+    VolunteerAccount__c:
+      table:
+      - Account
+    VolunteerContact__c:
+      table:
+      - Contact
+    VolunteerPosition__c:
+      table:
+      - VolunteerPosition__c
+Insert VolunteerActivityAssignment__c:
+  sf_object: VolunteerActivityAssignment__c
+  lookups:
+    VolunteerAccount__c:
+      table:
+      - Account
+    VolunteerActivity__c:
+      table:
+      - VolunteerActivity__c
+    VolunteerContact__c:
+      table:
+      - Contact
 Insert VolunteerShift__c:
   sf_object: VolunteerShift__c
   fields:
@@ -67,4 +110,35 @@ Insert VolunteerShift__c:
     Location__c:
       table:
       - Location
-
+    VolunteerActivity__c:
+      table:
+      - VolunteerActivity__c
+Insert VolunteerHoursLog__c:
+  sf_object: VolunteerHoursLog__c
+  fields:
+  - Comments__c
+  - EndDateTime__c
+  - EndDate__c
+  - Hours__c
+  - PlannedStartDateTime__c
+  - StartDateTime__c
+  - StartDate__c
+  lookups:
+    VolunteerContact__c:
+      table:
+      - Contact
+    VolunteerShift__c:
+      table:
+      - VolunteerShift__c
+Insert VolunteerShiftAssignment__c:
+  sf_object: VolunteerShiftAssignment__c
+  lookups:
+    VolunteerAccount__c:
+      table:
+      - Account
+    VolunteerContact__c:
+      table:
+      - Contact
+    VolunteerShift__c:
+      table:
+      - VolunteerShift__c

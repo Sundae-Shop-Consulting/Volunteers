@@ -12,7 +12,7 @@ An open source volunteer management application for Salesforce. The MVP will tar
 
 ## Sample Data 
 
-Update data model for sample data
+Update data model for sample data. Review this file after generating as it may include objects you don't want.
 `cci task run generate_dataset_mapping --path datasets/mapping.yml`
 
 Extract dataset
