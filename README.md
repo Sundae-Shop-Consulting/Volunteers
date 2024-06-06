@@ -16,10 +16,10 @@ Update data model for sample data. Review this file after generating as it may i
 `cci task run generate_dataset_mapping --path datasets/mapping.yml`
 
 Extract dataset
-`cci task run extract_dataset --mapping datasets/mapping.yml --sql_path datasets/sample.sql`
+`cci task run extract_dataset --mapping datasets/contact-based-model/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
 
 Load data
-`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/sample.sql`
+`cci task run load_dataset --mapping datasets/contact-based-model/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
 
 
 
