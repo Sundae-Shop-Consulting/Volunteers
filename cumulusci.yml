@@ -98,3 +98,5 @@ orgs:
             config_file: orgs/managed.json
         release:
             config_file: orgs/managed.json
+        dev_person: 
+            config_file: orgs/unmanaged-personaccounts.json

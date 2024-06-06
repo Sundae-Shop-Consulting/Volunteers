@@ -67,23 +67,4 @@ Insert VolunteerShift__c:
     Location__c:
       table:
       - Location
-Insert VolunteerActivityPosition__c:
-  sf_object: VolunteerActivityPosition__c
-  fields:
-  - NumberOfVolunteersAssigned__c
-  lookups:
-    VolunteerActivity__c:
-      table:
-      - VolunteerActivity__c
-    VolunteerPosition__c:
-      table:
-      - VolunteerPosition__c
-Insert VolunteerAssignment__c:
-  sf_object: VolunteerAssignment__c
-  lookups:
-    VolunteerActivityPosition__c:
-      table:
-      - VolunteerActivityPosition__c
-    VolunteerShift__c:
-      table:
-      - VolunteerShift__c
+

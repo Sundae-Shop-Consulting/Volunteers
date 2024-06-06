@@ -120,13 +120,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>VolunteerActivityPosition__c.NumberOfVolunteersAssigned__c</field>
+        <editable>true</editable>
+        <field>VolunteerActivityAssignment__c.VolunteerAccount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>VolunteerActivityPosition__c.NumberOfVolunteersNeeded__c</field>
+        <editable>true</editable>
+        <field>VolunteerActivityAssignment__c.VolunteerActivity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VolunteerActivityAssignment__c.VolunteerContact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -136,17 +141,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>VolunteerAssignment__c.VolunteerActivityPosition__c</field>
+        <field>VolunteerActivity__c.Location__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>VolunteerAssignment__c.VolunteerContact__c</field>
+        <field>VolunteerActivity__c.MaximumVolunteersAllowed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>VolunteerAssignment__c.VolunteerShift__c</field>
+        <field>VolunteerActivity__c.MinimumVolunteersNeeded__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VolunteerActivity__c.VolunteerEvent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VolunteerActivity__c.VolunteerPosition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VolunteerEvent__c.Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -167,6 +187,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>VolunteerHoursLog__c.StartDateTime__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VolunteerHoursLog__c.VolunteerShift__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -261,7 +286,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>VolunteerActivityPosition__c</object>
+        <object>VolunteerActivityAssignment__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -279,7 +304,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>VolunteerAssignment__c</object>
+        <object>VolunteerEvent__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -289,6 +314,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>VolunteerHoursLog__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>VolunteerPositionAssignment__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -310,11 +344,15 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>VolunteerActivityAssignment__c</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>VolunteerActivity__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>VolunteerAssignment__c</tab>
+        <tab>VolunteerEvent__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
@@ -322,11 +360,19 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>VolunteerPositionAssignment__c</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>VolunteerPosition__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>VolunteerShift__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Volunteer_Assignments</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>

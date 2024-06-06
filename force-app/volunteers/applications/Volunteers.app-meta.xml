@@ -15,8 +15,9 @@
     <tabs>VolunteerPosition__c</tabs>
     <tabs>VolunteerActivity__c</tabs>
     <tabs>VolunteerShift__c</tabs>
-    <tabs>VolunteerAssignment__c</tabs>
+    <tabs>Volunteer_Assignments</tabs>
     <tabs>VolunteerHoursLog__c</tabs>
+    <tabs>VolunteerEvent__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Volunteers_UtilityBar</utilityBar>
 </CustomApplication>
