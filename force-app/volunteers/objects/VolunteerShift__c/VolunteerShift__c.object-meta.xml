@@ -168,9 +168,6 @@
         <fields>NAME</fields>
         <fields>VolunteerActivity__c</fields>
         <fields>StartDateTime__c</fields>
-        <fields>DesiredNumberOfVolunteers__c</fields>
-        <fields>NumberOfVolunteersNeeded__c</fields>
-        <fields>TotalVolunteers__c</fields>
         <profileName>System Administrator</profileName>
     </profileSearchLayouts>
     <searchLayouts></searchLayouts>

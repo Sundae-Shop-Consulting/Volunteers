@@ -11,6 +11,29 @@
                 <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns/>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <label>Description</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Description__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <label>Details</label>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>VolunteerPosition__c</field>
@@ -46,20 +69,7 @@
                 <field>VolunteersStillNeeded__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>false</detailHeading>
-        <editHeading>false</editHeading>
-        <label>Description</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Description__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>OneColumn</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -96,9 +106,12 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>VolunteerAccount__c</fields>
+        <relatedList>VolunteerActivityAssignment__c.VolunteerActivity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>StartDateTime__c</fields>
-        <fields>DesiredNumberOfVolunteers__c</fields>
-        <fields>TotalVolunteers__c</fields>
         <relatedList>VolunteerShift__c.VolunteerActivity__c</relatedList>
         <sortField>StartDateTime__c</sortField>
         <sortOrder>Desc</sortOrder>
@@ -121,10 +134,6 @@
         <fields>CORE.USERS.FULL_NAME</fields>
         <fields>TASK.LAST_UPDATE</fields>
         <relatedList>RelatedHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>VolunteerActivityAssignment__c.VolunteerActivity__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

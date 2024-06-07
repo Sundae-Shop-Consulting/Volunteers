@@ -9,13 +9,19 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>Address.AddressType</members>
-        <members>Address.Description</members>
-        <members>Address.DrivingDirections</members>
-        <members>Address.LocationType</members>
-        <members>Address.ParentId</members>
-        <members>Address.TimeZone</members>
+        <members>VolunteerActivityAssignment__c.VolunteerContact__c</members>
+        <members>VolunteerActivityAssignment__c.VolunteerAccount__c</members>
+        <members>VolunteerActivityAssignment__c.VolunteerActivity__c</members>
         <members>VolunteerActivity__c.Description__c</members>
+        <members>VolunteerActivity__c.VolunteerEvent__c</members>
+        <members>VolunteerActivity__c.VolunteerPosition__c</members>
+        <members>VolunteerActivity__c.Location__c</members>
+        <members>VolunteerActivity__c.MaximumVolunteersAllowed__c</members>
+        <members>VolunteerActivity__c.MinimumVolunteersNeeded__c</members>
+        <members>VolunteerActivity__c.VolunteersAssigned__c</members>
+        <members>VolunteerActivity__c.VolunteerOpeningsAvailable__c</members>
+        <members>VolunteerActivity__c.VolunteersStillNeeded__c</members>
+        <members>VolunteerEvent__c.Description__c</members>
         <members>VolunteerHoursLog__c.Comments__c</members>
         <members>VolunteerHoursLog__c.EndDateTime__c</members>
         <members>VolunteerHoursLog__c.EndDate__c</members>
@@ -25,30 +31,42 @@
         <members>VolunteerHoursLog__c.StartDate__c</members>
         <members>VolunteerHoursLog__c.VolunteerContact__c</members>
         <members>VolunteerHoursLog__c.VolunteerShift__c</members>
+        <members>VolunteerPositionAssignment__c.VolunteerContact__c</members>
+        <members>VolunteerPositionAssignment__c.VolunteerAccount__c</members>
+        <members>VolunteerPositionAssignment__c.VolunteerPosition__c</members>
         <members>VolunteerPosition__c.Description__c</members>
         <members>VolunteerPosition__c.Duties__c</members>
-        <members>VolunteerPosition__c.LocationAddress__c</members>
         <members>VolunteerPosition__c.Location__c</members>
         <members>VolunteerPosition__c.MinimumAge__c</members>
         <members>VolunteerPosition__c.Qualifications__c</members>
         <members>VolunteerPosition__c.RequiredTraining__c</members>
         <members>VolunteerPosition__c.Status__c</members>
         <members>VolunteerPosition__c.TimeCommitment__c</members>
+        <members>VolunteerPosition__c.LocationAddress__c</members>
         <members>VolunteerShift__c.Description__c</members>
-        <members>VolunteerShift__c.DesiredNumberOfVolunteers__c</members>
         <members>VolunteerShift__c.DurationHours__c</members>
         <members>VolunteerShift__c.Location__c</members>
-        <members>VolunteerShift__c.NumberOfVolunteersNeeded__c</members>
         <members>VolunteerShift__c.StartDateTime__c</members>
-        <members>VolunteerShift__c.TotalVolunteers__c</members>
         <members>VolunteerShift__c.VolunteerActivity__c</members>
+        <members>VolunteerShift__c.MaximumVolunteersAllowed__c</members>
+        <members>VolunteerShift__c.MinimumVolunteersNeeded__c</members>
+        <members>VolunteerShift__c.VolunteersAssigned__c</members>
+        <members>VolunteerShift__c.VolunteerOpeningsAvailable__c</members>
+        <members>VolunteerShift__c.VolunteersStillNeeded__c</members>
+        <members>VolunteerShiftAssignment__c.VolunteerContact__c</members>
+        <members>VolunteerShiftAssignment__c.VolunteerAccount__c</members>
+        <members>VolunteerShiftAssignment__c.VolunteerShift__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>Address</members>
+        <members>VolunteerActivityAssignment__c</members>
         <members>VolunteerActivity__c</members>
+        <members>VolunteerEvent__c</members>
         <members>VolunteerHoursLog__c</members>
+        <members>VolunteerPositionAssignment__c</members>
         <members>VolunteerPosition__c</members>
+        <members>VolunteerShiftAssignment__c</members>
         <members>VolunteerShift__c</members>
         <name>CustomObject</name>
     </types>
@@ -71,6 +89,7 @@
         <members>Volunteer_Activity_Record_Page1</members>
         <members>Volunteer_Assignment_Record_Page</members>
         <members>Volunteer_Assignments</members>
+        <members>Volunteer_Position_Record_Page</members>
         <members>Volunteer_Shift_Record_Page</members>
         <members>Volunteers_UtilityBar</members>
         <name>FlexiPage</name>
@@ -80,13 +99,20 @@
         <name>GlobalValueSet</name>
     </types>
     <types>
-        <members>VolunteerActivityAssignment__c-Volunteer Activity Assignment Layout</members>
-        <members>VolunteerActivity__c-Volunteer Activity Layout</members>
+        <members>Location-Volunteer Location Layout</members>
+        <members>VolunteerActivityAssignment__c-Volunteer Activity Assignment Layout - Contacts</members>
+        <members>VolunteerActivityAssignment__c-Volunteer Activity Assignment Layout - Person Accounts</members>
+        <members>VolunteerActivity__c-Volunteer Activity Layout - Contacts</members>
+        <members>VolunteerActivity__c-Volunteer Activity Layout - Person Accounts</members>
         <members>VolunteerEvent__c-Volunteer Event Layout</members>
-        <members>VolunteerPositionAssignment__c-Volunteer Position Assignment Layout</members>
-        <members>VolunteerPosition__c-Volunteer Position Layout</members>
-        <members>VolunteerShiftAssignment__c-Volunteer Shift Assignment Layout</members>
-        <members>VolunteerShift__c-Volunteer Shift Layout</members>
+        <members>VolunteerPositionAssignment__c-Volunteer Position Assignment Layout - Contacts</members>
+        <members>VolunteerPositionAssignment__c-Volunteer Position Assignment Layout - Person Accounts</members>
+        <members>VolunteerPosition__c-Volunteer Position Layout - Contacts</members>
+        <members>VolunteerPosition__c-Volunteer Position Layout - Person Accounts</members>
+        <members>VolunteerShiftAssignment__c-Volunteer Shift Assignment Layout - Contacts</members>
+        <members>VolunteerShiftAssignment__c-Volunteer Shift Assignment Layout - Person Accounts</members>
+        <members>VolunteerShift__c-Volunteer Shift Layout - Contacts</members>
+        <members>VolunteerShift__c-Volunteer Shift Layout - Person Accounts</members>
         <name>Layout</name>
     </types>
     <types>
