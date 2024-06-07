@@ -110,7 +110,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>VolunteerAccount__c</fields>
+        <fields>VolunteerContact__c</fields>
         <relatedList>VolunteerShiftAssignment__c.VolunteerShift__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -119,7 +119,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hRt000003GJRg</masterLabel>
+        <masterLabel>00hRK0000030OIU</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
