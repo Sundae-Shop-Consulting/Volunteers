@@ -96,7 +96,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>VolunteerAccount__c</fields>
+        <fields>VolunteerContact__c</fields>
         <fields>CREATED_DATE</fields>
         <relatedList>VolunteerPositionAssignment__c.VolunteerPosition__c</relatedList>
         <sortField>CREATED_DATE</sortField>
@@ -137,7 +137,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hRt000003GJRf</masterLabel>
+        <masterLabel>00hRK0000030OIS</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -106,12 +106,14 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>VolunteerAccount__c</fields>
+        <fields>VolunteerContact__c</fields>
         <relatedList>VolunteerActivityAssignment__c.VolunteerActivity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <fields>StartDateTime__c</fields>
+        <fields>VolunteersAssigned__c</fields>
+        <fields>VolunteersStillNeeded__c</fields>
         <relatedList>VolunteerShift__c.VolunteerActivity__c</relatedList>
         <sortField>StartDateTime__c</sortField>
         <sortOrder>Desc</sortOrder>
@@ -141,7 +143,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hRt000003GJRc</masterLabel>
+        <masterLabel>00hRK0000030OIO</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>2</sizeY>
         <summaryLayoutItems>

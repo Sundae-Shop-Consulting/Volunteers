@@ -15,11 +15,13 @@ An open source volunteer management application for Salesforce. The MVP will tar
 Update data model for sample data. Review this file after generating as it may include objects you don't want.
 `cci task run generate_dataset_mapping --path datasets/mapping.yml`
 
+### Animal shelter dataset
+
 Extract dataset
-`cci task run extract_dataset --mapping datasets/contact-based-model/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
+`cci task run extract_dataset --mapping datasets/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
 
 Load data
-`cci task run load_dataset --mapping datasets/contact-based-model/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
+`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
 
 
 
