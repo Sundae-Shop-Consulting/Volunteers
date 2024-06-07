@@ -104,8 +104,11 @@ Insert VolunteerShift__c:
   - Description__c
   - DesiredNumberOfVolunteers__c
   - DurationHours__c
+  - MaximumVolunteersAllowed__c
+  - MinimumVolunteersNeeded__c
   - StartDateTime__c
   - TotalVolunteers__c
+  - VolunteersAssigned__c
   lookups:
     Location__c:
       table:
