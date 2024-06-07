@@ -337,6 +337,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>VolunteerAssignments</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>VolunteerEvent__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
@@ -354,10 +358,6 @@
     </tabSettings>
     <tabSettings>
         <tab>VolunteerShift__c</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Volunteer_Assignments</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>

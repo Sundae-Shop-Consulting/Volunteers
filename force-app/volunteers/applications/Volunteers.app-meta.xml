@@ -17,7 +17,7 @@
     <tabs>VolunteerEvent__c</tabs>
     <tabs>VolunteerActivity__c</tabs>
     <tabs>VolunteerShift__c</tabs>
-    <tabs>Volunteer_Assignments</tabs>
+    <tabs>VolunteerAssignments</tabs>
     <tabs>VolunteerHoursLog__c</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
