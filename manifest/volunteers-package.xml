@@ -73,21 +73,19 @@
     <types>
         <members>VolunteerActivityAssignment__c</members>
         <members>VolunteerActivity__c</members>
-        <members>VolunteerAssignment__c</members>
         <members>VolunteerEvent__c</members>
         <members>VolunteerHoursLog__c</members>
         <members>VolunteerPositionAssignment__c</members>
         <members>VolunteerPosition__c</members>
         <members>VolunteerShiftAssignment__c</members>
         <members>VolunteerShift__c</members>
-        <members>Volunteer_Assignments</members>
+        <members>VolunteerAssignments</members>
         <name>CustomTab</name>
     </types>
     <types>
         <members>Volunteer_Activity_Position_Record_Page</members>
         <members>Volunteer_Activity_Record_Page</members>
         <members>Volunteer_Activity_Record_Page1</members>
-        <members>Volunteer_Assignment_Record_Page</members>
         <members>Volunteer_Assignments</members>
         <members>Volunteer_Position_Record_Page</members>
         <members>Volunteer_Shift_Record_Page</members>
