@@ -1,13 +1,14 @@
 ## Data Model
 
-### Overview
+### Definitions
+* **Volunteer Positions** are job listings. They include a description of the job, duties, qualifications and other requirements needed to volunteer in a given role.
+* **Volunteer Activities** are things that a volunteer who is qualified for a certain position can do. They aren't directly tied to a certain time, but they can contain one or more shifts.
+* **Volunteer Shifts** capture time slots that require a certain number of volunteers to come together at a certain time to do a certain type of work.
+* **Volunteer Events** group a collection of activities. These are useful when coordinating many volunteers filling multiple positions for the same event.
 
-* Volunteer Positions are job listings. They include a description of the job, duties, qualifications and other requirements needed to volunteer in a given role.
-* Volunteer Activities are things that a volunteer who is qualified for a certain position can do. They aren't directly tied to a certain time, but they can contain one or more shifts.
-* Volunteer Shifts capture time slots that require a certain number of volunteers to come together at a certain time to do a certain type of work.
-* Volunteer Events capture a collection of activities. These are useful when coordinating many volunteers filling multiple positions for the same event.
+We'll see more about how these objects are put to use in [Data Model in Context](data_model_in_context) after we introduce some sample scenarios.
 
-We'll see more about how these objects are put to use in Data Model in Context after we introduce some sample scenarios.
+If you'd like to skip the narrative, you can go directly to [Entity Relationships](entity_relationships).
 
 ## Sample Data Scenarios
 
@@ -25,7 +26,7 @@ Daniel Jackson has been helping the marketing lead at Toe Beans design a new mic
 
 Mia Davis is a long-time volunteer who can do it all. She comes in most Tuesdays to do data entry in the office. She knows the organization well and occasionally helps out with volunteer training or processing adoptions. She's also happy to take a shift playing with kittens at the cat shelter as needed.
 
-### Data Model in Context
+### <a href="data_model_in_context"></a>Data Model in Context
 
 Let's take a look at how we might see different types of data appear in our data model with the animal shelter example:
 
@@ -56,8 +57,29 @@ Activities are the jobs that volunteers interact with once they've been accepted
 
 For activities with flexible timing, volunteers can be directly assigned to the activity. For our Administrative Assistant example, we'd have a volunteer activity for the position. The name of the activity might be similar to the name of the position. In this case, we'll call the activity Data Entry for clarity. Data Entry (the activity) is the job we're asking Mia (the volunteer) to complete as as Administrative Assistant (the position). Volunteers are connected to activities via Volunteer Activity Assignments.
 
-![[contact_with_assignments.png]]
+![Screenshot of Volunteer Activity with Volunteer Activity Assignments related list](images/volunteer_activity_with_assignments.png)
 
 Volunteers are connected to positions via Volunteer Position Assignments.
 
-![[volunteer_activity_with_assignment.png]]
+![Screenshot of Contact page with Volunteer Position Assignments and Volunteer Activity Assignments related lists](images/contact_with_assignments.png)
+
+## <a href="entity_relationships"></a>Entity Relationships
+
+![Volunteers entity relationship diagram](images/volunteers_erd.png)
+
+This is an early draft model. More fields will be added as the product is developed. 
+
+### Standard vs. Custom Objects
+
+This model favors domain-specific custom objects over repurposing standard objects. This avoid collision with other use cases and ensures full support for custom object functionality that may or may not exist in standard objects. 
+
+The following standard objects are used:
+* Contact
+* Account (Person Account)
+* Location
+
+All other objects are custom.
+
+### Contacts vs. Person Accounts
+
+This model is intended to support either modeling volunteers as Contacts or Person Accounts, though not within the same org. All volunteer-related objects contain lookups with both Contact and Account, both labeled Volunteer with API names to disambiguate (VolunteerContact__c or VolunteerAccount__c).
