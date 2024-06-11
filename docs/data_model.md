@@ -6,9 +6,9 @@
 * **Volunteer Shifts** capture time slots that require a certain number of volunteers to come together at a certain time to do a certain type of work.
 * **Volunteer Events** group a collection of activities. These are useful when coordinating many volunteers filling multiple positions for the same event.
 
-We'll see more about how these objects are put to use in [Data Model in Context](data_model_in_context) after we introduce some sample scenarios.
+We'll see more about how these objects are put to use in [Data Model in Context](#data-model-in-context) after we introduce some sample scenarios.
 
-If you'd like to skip the narrative, you can go directly to [Entity Relationships](entity_relationships).
+If you'd like to skip the narrative, you can go directly to [Entity Relationships](#entity-relationships).
 
 ## Sample Data Scenarios
 
@@ -26,7 +26,7 @@ Daniel Jackson has been helping the marketing lead at Toe Beans design a new mic
 
 Mia Davis is a long-time volunteer who can do it all. She comes in most Tuesdays to do data entry in the office. She knows the organization well and occasionally helps out with volunteer training or processing adoptions. She's also happy to take a shift playing with kittens at the cat shelter as needed.
 
-### <a href="data_model_in_context"></a>Data Model in Context
+### Data Model in Context
 
 Let's take a look at how we might see different types of data appear in our data model with the animal shelter example:
 
@@ -63,7 +63,7 @@ Volunteers are connected to positions via Volunteer Position Assignments.
 
 ![Screenshot of Contact page with Volunteer Position Assignments and Volunteer Activity Assignments related lists](images/contact_with_assignments.png)
 
-## <a href="entity_relationships"></a>Entity Relationships
+## Entity Relationships
 
 ![Volunteers entity relationship diagram](images/volunteers_erd.png)
 
