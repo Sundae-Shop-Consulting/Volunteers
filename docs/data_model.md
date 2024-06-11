@@ -5,6 +5,7 @@
 * **Volunteer Activities** are things that a volunteer who is qualified for a certain position can do. They aren't directly tied to a certain time, but they can contain one or more shifts.
 * **Volunteer Shifts** capture time slots that require a certain number of volunteers to come together at a certain time to do a certain type of work.
 * **Volunteer Events** group a collection of activities. These are useful when coordinating many volunteers filling multiple positions for the same event.
+* **Volunteer Applications** are like job applications. (This is represented on the ERD but has not been built out or included in the sample scenarios yet.) 
 
 We'll see more about how these objects are put to use in [Data Model in Context](#data-model-in-context) after we introduce some sample scenarios.
 
