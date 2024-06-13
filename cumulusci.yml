@@ -8,9 +8,9 @@ project:
     git:
         default_branch: 'main'
     source_format: sfdx
-    
+    dependencies:
+        - github: https://github.com/SFDO-Community/declarative-lookup-rollup-summaries
       
-
 
 
 flows:
