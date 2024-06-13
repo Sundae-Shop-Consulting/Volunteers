@@ -7,8 +7,10 @@ An open source volunteer management application for Salesforce. The MVP will tar
 
 # Dev Org Setup
 `cci org scratch dev dev --default`
+
 `cci flow run dev_org`
-`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/sample.sql`
+
+`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
 
 ## Sample Data 
 
