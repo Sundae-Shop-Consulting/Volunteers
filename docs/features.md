@@ -38,7 +38,7 @@ The goal of the Volunteers project is to complete an MVP version of internal, vo
 
 * Volunteer Activity
 	* Volunteers Assigned
-	* Completed Hours
+	* Total Volunteer Hours
 	* First Shift Date/Time
 * Volunteer Shift
 	* Volunteers Assigned
