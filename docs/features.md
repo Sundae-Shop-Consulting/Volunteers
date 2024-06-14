@@ -36,16 +36,20 @@ The goal of the Volunteers project is to complete an MVP version of internal, vo
 
 ### Volunteers calculations
 
+* Volunteer Position
+	* Volunteers Assigned 
+	* Volunteer Activities
+	* Volunteer Hours
 * Volunteer Activity
 	* Volunteers Assigned
-	* Total Volunteer Hours
+	* Volunteer Hours
 	* First Shift Date/Time
 * Volunteer Shift
 	* Volunteers Assigned
 * Contact/Person Account
 	* First Volunteer Date
 	* Last Volunteer Date
-	* Total Volunteer Hours
+	* Volunteer Hours
 
 ## Volunteer Assignment
 
