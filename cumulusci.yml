@@ -14,6 +14,11 @@ project:
 
 
 flows:
+    dev_org:
+        steps:
+            10:
+                task: deploy_dlrs 
+
     make_community:
         steps:
             1:
