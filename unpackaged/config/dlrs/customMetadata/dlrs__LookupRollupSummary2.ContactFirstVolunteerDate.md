@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>Volunteer Shift: Volunteers Assigned</label>
+    <label>Contact: First Volunteer Date</label>
     <protected>false</protected>
     <values>
         <field>dlrs__Active__c</field>
@@ -12,11 +12,11 @@
     </values>
     <values>
         <field>dlrs__AggregateOperation__c</field>
-        <value xsi:type="xsd:string">Count Distinct</value>
+        <value xsi:type="xsd:string">First</value>
     </values>
     <values>
         <field>dlrs__AggregateResultField__c</field>
-        <value xsi:type="xsd:string">VolunteersAssigned__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE_DOT%%%FirstVolunteerDate__c</value>
     </values>
     <values>
         <field>dlrs__CalculationMode__c</field>
@@ -28,7 +28,7 @@
     </values>
     <values>
         <field>dlrs__ChildObject__c</field>
-        <value xsi:type="xsd:string">VolunteerShiftAssignment__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE_DOT%%%VolunteerHoursLog__c</value>
     </values>
     <values>
         <field>dlrs__ConcatenateDelimiter__c</field>
@@ -36,19 +36,19 @@
     </values>
     <values>
         <field>dlrs__Description__c</field>
-        <value xsi:type="xsd:string">Count of distinct contacts for all Volunteer Shift Assignments associated with this Volunteer Shift</value>
+        <value xsi:type="xsd:string">The date of the Start Date for the earliest Volunteer Hours Log associated with this Contact.</value>
     </values>
     <values>
         <field>dlrs__FieldToAggregate__c</field>
-        <value xsi:type="xsd:string">VolunteerContact__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE_DOT%%%StartDate__c</value>
     </values>
     <values>
         <field>dlrs__FieldToOrderBy__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">%%%NAMESPACE_DOT%%%StartDate__c</value>
     </values>
     <values>
         <field>dlrs__ParentObject__c</field>
-        <value xsi:type="xsd:string">VolunteerShift__c</value>
+        <value xsi:type="xsd:string">Contact</value>
     </values>
     <values>
         <field>dlrs__RelationshipCriteriaFields__c</field>
@@ -60,7 +60,7 @@
     </values>
     <values>
         <field>dlrs__RelationshipField__c</field>
-        <value xsi:type="xsd:string">VolunteerShift__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE_DOT%%%VolunteerContact__c</value>
     </values>
     <values>
         <field>dlrs__RowLimit__c</field>
