@@ -30,7 +30,7 @@
         <members>VolunteerHoursLog__c.StartDateTime__c</members>
         <members>VolunteerHoursLog__c.StartDate__c</members>
         <members>VolunteerHoursLog__c.VolunteerContact__c</members>
-        <members>VolunteerHoursLog__c.VolunteerShift__c</members>
+        <members>VolunteerHoursLog__c.VolunteerActivity__c</members>
         <members>VolunteerPositionAssignment__c.VolunteerContact__c</members>
         <members>VolunteerPositionAssignment__c.VolunteerAccount__c</members>
         <members>VolunteerPositionAssignment__c.VolunteerPosition__c</members>

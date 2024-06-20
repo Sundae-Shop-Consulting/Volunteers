@@ -14,6 +14,11 @@ project:
 
 
 flows:
+    dev_org:
+        steps:
+            10:
+                task: deploy_dlrs 
+
     make_community:
         steps:
             1:
@@ -39,9 +44,25 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+    
+    retrieve_dlrs:
+        description: "Retrieves custom metadata to configure rollups"
+        group: "DLRS"
+        class_path: cumulusci.tasks.salesforce.RetrieveUnpackaged
+        options:
+            path: unpackaged/config/contact-based/dlrs/
+            package_xml: unpackaged/config/contact-based/dlrs/package.xml
+
+    deploy_dlrs:
+        description: "Deploys custom metadata to configure rollups"
+        group: "DLRS"
+        class_path: cumulusci.tasks.salesforce.Deploy
+        options:
+            path: unpackaged/config/contact-based/dlrs/
 
     create_community:
         description: "Creates a community with the Customer Service template"
+        group: "Experience Cloud"
         class_path: cumulusci.tasks.salesforce.CreateCommunity
         options:
             template: Customer Service
@@ -51,13 +72,14 @@ tasks:
             skip_existing: true
 
     deploy_experience_cloud:
-        group: "Config"
         description: Deploys the post-install configuration emulating a customer-created Experience Cloud
+        group: "Experience Cloud"
         class_path: cumulusci.tasks.salesforce.Deploy
         options:
             path: unpackaged/config/experience_cloud
 
     update_experience_cloud_OWDs:
+        group: "Experience Cloud"
         class_path: cumulusci.tasks.metadata_etl.SetOrgWideDefaults
         options:
             org_wide_defaults:
@@ -67,13 +89,14 @@ tasks:
 
     publish_community:
         description: Publishes the "Volunteer Community" Community in the target org using the Connect API
+        group: "Experience Cloud"
         class_path: cumulusci.tasks.salesforce.PublishCommunity
         options:
             name: Volunteer Community
 
-
     create_community_owner:
         description: POSTs json files to the Composite REST API endpoint.
+        group: "Experience Cloud"
         class_path: cumulusci.tasks.salesforce.composite.CompositeApi
         options:
             data_files:
@@ -81,6 +104,7 @@ tasks:
 
     create_community_user:
         description: POSTs json files to the Composite REST API endpoint.
+        group: "Experience Cloud"
         class_path: cumulusci.tasks.salesforce.composite.CompositeApi
         options:
             data_files:

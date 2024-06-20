@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LastVolunteerDate__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>As reported on Volunteer Hours Logs. If a volunteer has signed up for an activity but not yet logged hours, that will not be represented here.</inlineHelpText>
+    <label>Last Volunteer Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>
