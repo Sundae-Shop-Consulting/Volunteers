@@ -1,5 +1,5 @@
 # Volunteers
-This is an open source volunteer management application for Salesforce. The MVP will target volunteer manager use cases: Finding and assigning volunteers, reporting on volunteer data, and managing volunteer activities. The short-term goal of the project is to complete an MVP version of internal, volunteer manager features of Volunteers for Salesforce by August 7, 2024. 
+This is an open source volunteer management application for Salesforce. The MVP will target volunteer manager use cases: Finding and assigning volunteers, reporting on volunteer data, and managing volunteer activities. The short-term goal of the project is to complete an MVP version of internal, volunteer manager features of [Volunteers for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000003JBggEAG) by August 7, 2024. 
 
 This project is:
 - Conceptually based on the features supported in Volunteers for Salesforce, but built on a [new data model](docs/data_model.md) compatible with a broader range of licenses.
