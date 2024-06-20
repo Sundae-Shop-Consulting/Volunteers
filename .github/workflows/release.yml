@@ -8,5 +8,5 @@ jobs:
         secrets:
             dev-hub-auth-url: "${{ secrets.DEV_HUB_AUTH_URL }}"
             gh-email: "${{ secrets.GH_EMAIL }}"
-            github-token: "${{ secrets.GITHUB_TOKEN }}"
+            github-token: "${{ secrets.CCI_GITHUB_TOKEN }}"
             
