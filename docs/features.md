@@ -1,7 +1,5 @@
 # Features
 
-The goal of the Volunteers project is to complete an MVP version of internal, volunteer manager features of Volunteers for Salesforce by August 2024. Features included in the volunteer portal of V4S or any significant enhancements are out of scope until the MVP goal is complete. This document includes an overview of V4S features for reference as well as a high-level description of how those features might be replaced. While we want to solve the same problems that V4S solved, we may do so in entirely different ways to improve functionality and user experience. This document is an early draft that will evolve over time.clear
-
 ## List
 
 * [Rollup Calculations](#rollup-calculations)
@@ -9,7 +7,7 @@ The goal of the Volunteers project is to complete an MVP version of internal, vo
 * [Shift Calendar](#shift-calendar)
 * [Volunteer Reports & Dashboards](#volunteer-report-dashboards)
 * [Volunteer Roster](#volunteer-roster)
-* [Ad Hoc Email](#ad-hoc-email)
+* [Mass Email Volunteers](#mass-email-volunteers)
 * [Volunteer Recurrence](#volunteer-recurrence)
 * [Shift Recurrence](#shift-recurrence)
 
