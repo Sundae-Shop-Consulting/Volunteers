@@ -120,11 +120,13 @@ CREATE TABLE "Address" (
 	"Timezone" VARCHAR(255), 
 	"LocationType" VARCHAR(255), 
 	"AddressType" VARCHAR(255), 
+	"ParentId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Address" VALUES('Address-1','','555 Rosebud Lane','Kirkland','WA','98004','','','','Site','Mailing');
-INSERT INTO "Address" VALUES('Address-2','','1234 Mockingbird Lane','Shoreline','WA','98133','','','','Site','Mailing');
-INSERT INTO "Address" VALUES('Address-3','','555 Cherry Ave','Seattle','WA','98133','','','','Site','Mailing');
+INSERT INTO "Address" VALUES('Address-1','','555 Rosebud Lane','Kirkland','WA','98004','','','','Site','Mailing','Location-3');
+INSERT INTO "Address" VALUES('Address-2','','1234 Mockingbird Lane','Shoreline','WA','98133','','','','Site','Mailing','Location-2');
+INSERT INTO "Address" VALUES('Address-3','','555 Cherry Ave','Seattle','WA','98133','','','','Site','Mailing','Location-1');
+INSERT INTO "Address" VALUES('Address-4','','555 Main Street','','','','','','','Warehouse','Mailing','Location-1');
 CREATE TABLE "Contact" (
 	id VARCHAR(255) NOT NULL, 
 	"DoNotCall" VARCHAR(255), 
@@ -242,13 +244,11 @@ CREATE TABLE "Location" (
 	"LocationType" VARCHAR(255), 
 	"Name" VARCHAR(255), 
 	"ShouldSyncWithOci" VARCHAR(255), 
-	"VisitorAddressId" VARCHAR(255), 
-	"ParentLocationId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Location" VALUES('Location-1','False','False','Site','Toe Beans Animal Rescue - Main Office','False','Address-3','');
-INSERT INTO "Location" VALUES('Location-2','False','False','Site','Toe Beans Cat Shelter - Shoreline','False','Address-2','');
-INSERT INTO "Location" VALUES('Location-3','False','False','Site','Toe Beans Dog Shelter - Kirkland','False','Address-1','');
+INSERT INTO "Location" VALUES('Location-1','False','False','Site','Toe Beans Animal Rescue - Main Office','False');
+INSERT INTO "Location" VALUES('Location-2','False','False','Site','Toe Beans Cat Shelter - Shoreline','False');
+INSERT INTO "Location" VALUES('Location-3','False','False','Site','Toe Beans Dog Shelter - Kirkland','False');
 CREATE TABLE "VolunteerActivityAssignment__c" (
 	id VARCHAR(255) NOT NULL, 
 	"VolunteerAccount__c" VARCHAR(255), 
