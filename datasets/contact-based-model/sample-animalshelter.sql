@@ -123,6 +123,8 @@ CREATE TABLE "Address" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "Address" VALUES('Address-1','','555 Rosebud Lane','Kirkland','WA','98004','','','','Site','Mailing');
+INSERT INTO "Address" VALUES('Address-2','','1234 Mockingbird Lane','Shoreline','WA','98133','','','','Site','Mailing');
+INSERT INTO "Address" VALUES('Address-3','','555 Cherry Ave','Seattle','WA','98133','','','','Site','Mailing');
 CREATE TABLE "Contact" (
 	id VARCHAR(255) NOT NULL, 
 	"DoNotCall" VARCHAR(255), 
@@ -244,8 +246,8 @@ CREATE TABLE "Location" (
 	"ParentLocationId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Location" VALUES('Location-1','False','False','Site','Toe Beans Animal Rescue - Main Office','False','','');
-INSERT INTO "Location" VALUES('Location-2','False','False','Site','Toe Beans Cat Shelter - Shoreline','False','','');
+INSERT INTO "Location" VALUES('Location-1','False','False','Site','Toe Beans Animal Rescue - Main Office','False','Address-3','');
+INSERT INTO "Location" VALUES('Location-2','False','False','Site','Toe Beans Cat Shelter - Shoreline','False','Address-2','');
 INSERT INTO "Location" VALUES('Location-3','False','False','Site','Toe Beans Dog Shelter - Kirkland','False','Address-1','');
 CREATE TABLE "VolunteerActivityAssignment__c" (
 	id VARCHAR(255) NOT NULL, 
