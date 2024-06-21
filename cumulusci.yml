@@ -23,6 +23,12 @@ flows:
                 options:
                     api_names:
                         - VolunteerManager 
+            12:
+                task: load_dataset
+                options:
+                    mapping: datasets/mapping.yml
+                    sql_path: datasets/contact-based-model/sample-animalshelter.sql
+                    drop_missing_schema: True
 
     make_community:
         steps:
