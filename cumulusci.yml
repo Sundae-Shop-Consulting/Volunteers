@@ -18,6 +18,11 @@ flows:
         steps:
             10:
                 task: deploy_dlrs 
+            11:
+                task: assign_permission_sets
+                options:
+                    api_names:
+                        - VolunteerManager 
 
     make_community:
         steps:

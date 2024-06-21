@@ -7,6 +7,19 @@ Insert Account:
       table:
       - Account
       after: Insert Account
+Insert Address:
+  sf_object: Address
+  fields: 
+    - Description
+    - Street
+    - City
+    - State
+    - PostalCode
+    - Country
+    - DrivingDirections
+    - Timezone
+    - LocationType
+    - AddressType
 Insert Location:
   sf_object: Location
   fields:
@@ -16,6 +29,10 @@ Insert Location:
   - Name
   - ShouldSyncWithOci
   lookups:
+    VisitorAddressId:
+      table:
+      - Address
+      after: Insert Address
     ParentLocationId:
       table:
       - Location
