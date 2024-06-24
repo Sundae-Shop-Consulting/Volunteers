@@ -33,7 +33,6 @@ Insert Address:
   lookups:
     ParentId:
       table: Location
-      after: Insert Location
 
 Insert VolunteerEvent__c:
   sf_object: VolunteerEvent__c
