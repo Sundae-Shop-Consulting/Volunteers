@@ -10,6 +10,10 @@ Features included in the volunteer portal of V4S or any significant enhancements
 Email laura@sundaeshopconsulting.com to get involved.
 
 # Dev Org Setup
+This project uses CumulusCI to manage development environments. For more information, see [Getting Started on CumulusCI](https://cumulusci.readthedocs.io/en/stable/get-started.html). 
+
+Once you've set up CumulusCI, you can get a scratch org with an unmanaged version of the Volunteers project configured with sample data by running:
+
 `cci org scratch dev dev --default`
 
 `cci flow run dev_org`
@@ -31,7 +35,7 @@ Load data
 
 
 
-# Project Setup
+# Repo Setup
 This project is preconfigured with D2X for a comprehensive Development-to-Delivery Experience including CI/CD using GitHub Actions and development environments using GitHub Codespaces.
 
 D2X requires some minimal configuration of your GitHub organization or repository to complete the setup and enable builds:
