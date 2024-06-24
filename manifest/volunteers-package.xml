@@ -98,19 +98,13 @@
     </types>
     <types>
         <members>Location-Volunteer Location Layout</members>
-        <members>VolunteerActivityAssignment__c-Volunteer Activity Assignment Layout - Contacts</members>
-        <members>VolunteerActivityAssignment__c-Volunteer Activity Assignment Layout - Person Accounts</members>
-        <members>VolunteerActivity__c-Volunteer Activity Layout - Contacts</members>
-        <members>VolunteerActivity__c-Volunteer Activity Layout - Person Accounts</members>
+        <members>VolunteerActivityAssignment__c-Volunteer Activity Assignment Layout</members>
+        <members>VolunteerActivity__c-Volunteer Activity Layout</members>
         <members>VolunteerEvent__c-Volunteer Event Layout</members>
-        <members>VolunteerPositionAssignment__c-Volunteer Position Assignment Layout - Contacts</members>
-        <members>VolunteerPositionAssignment__c-Volunteer Position Assignment Layout - Person Accounts</members>
-        <members>VolunteerPosition__c-Volunteer Position Layout - Contacts</members>
-        <members>VolunteerPosition__c-Volunteer Position Layout - Person Accounts</members>
-        <members>VolunteerShiftAssignment__c-Volunteer Shift Assignment Layout - Contacts</members>
-        <members>VolunteerShiftAssignment__c-Volunteer Shift Assignment Layout - Person Accounts</members>
-        <members>VolunteerShift__c-Volunteer Shift Layout - Contacts</members>
-        <members>VolunteerShift__c-Volunteer Shift Layout - Person Accounts</members>
+        <members>VolunteerPositionAssignment__c-Volunteer Position Assignment Layout</members>
+        <members>VolunteerPosition__c-Volunteer Position Layout</members>
+        <members>VolunteerShiftAssignment__c-Volunteer Shift Assignment Layout</members>
+        <members>VolunteerShift__c-Volunteer Shift Layout</members>
         <name>Layout</name>
     </types>
     <types>

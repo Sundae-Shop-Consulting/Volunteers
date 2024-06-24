@@ -14,7 +14,7 @@ Email laura@sundaeshopconsulting.com to get involved.
 
 `cci flow run dev_org`
 
-`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
+`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/sample-animalshelter.sql`
 
 ## Sample Data 
 
@@ -24,10 +24,10 @@ Update data model for sample data. Review this file after generating as it may i
 ### Animal shelter dataset
 
 Extract dataset
-`cci task run extract_dataset --mapping datasets/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
+`cci task run extract_dataset --mapping datasets/mapping.yml --sql_path datasets/sample-animalshelter.sql`
 
 Load data
-`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/contact-based-model/sample-animalshelter.sql`
+`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/sample-animalshelter.sql`
 
 
 

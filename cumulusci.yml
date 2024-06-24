@@ -27,7 +27,7 @@ flows:
                 task: load_dataset
                 options:
                     mapping: datasets/mapping.yml
-                    sql_path: datasets/contact-based-model/sample-animalshelter.sql
+                    sql_path: datasets/sample-animalshelter.sql
                     drop_missing_schema: True
 
     make_community:

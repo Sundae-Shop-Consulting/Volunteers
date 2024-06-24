@@ -44,7 +44,7 @@
 	* First Shift Date/Time
 * Volunteer Shift
 	* Volunteers Assigned
-* Contact/Person Account
+* Contact
 	* First Volunteer Date
 	* Last Volunteer Date
 	* Volunteer Hours
