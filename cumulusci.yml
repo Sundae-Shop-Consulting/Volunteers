@@ -61,8 +61,8 @@ tasks:
         group: "DLRS"
         class_path: cumulusci.tasks.salesforce.RetrieveUnpackaged
         options:
-            path: unpackaged/config/contact-based/dlrs/
-            package_xml: unpackaged/config/contact-based/dlrs/package.xml
+            path: unpackaged/config/dlrs/
+            package_xml: unpackaged/config/dlrs/package.xml
 
     deploy_dlrs:
         description: "Deploys custom metadata to configure rollups"
