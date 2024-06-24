@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>dlrs_VolunteerActivityAssignmentTest</members>
+        <members>dlrs_VolunteerActivityTest</members>
+        <members>dlrs_VolunteerHoursLogTest</members>
+        <members>dlrs_VolunteerPositionAssignmentTest</members>
+        <members>dlrs_VolunteerShiftAssignmentTest</members>
+        <members>dlrs_VolunteerShiftTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>dlrs_VolunteerActivityAssignmentTrigger</members>
+        <members>dlrs_VolunteerActivityTrigger</members>
+        <members>dlrs_VolunteerHoursLogTrigger</members>
+        <members>dlrs_VolunteerPositionAssignmentTrigger</members>
+        <members>dlrs_VolunteerShiftAssignmentTrigger</members>
+        <members>dlrs_VolunteerShiftTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
         <members>dlrs__LookupRollupSummary2.ContactFirstVolunteerDate</members>
         <members>dlrs__LookupRollupSummary2.ContactLastVolunteerDate</members>
         <members>dlrs__LookupRollupSummary2.ContactVolunteerHours</members>
