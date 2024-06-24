@@ -69,7 +69,7 @@ tasks:
         group: "DLRS"
         class_path: cumulusci.tasks.salesforce.Deploy
         options:
-            path: unpackaged/config/contact-based/dlrs/
+            path: unpackaged/config/dlrs/
 
     create_community:
         description: "Creates a community with the Customer Service template"
