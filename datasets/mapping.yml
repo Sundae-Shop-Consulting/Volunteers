@@ -7,6 +7,16 @@ Insert Account:
       table:
       - Account
       after: Insert Account
+
+Insert Location:
+  sf_object: Location
+  fields:
+  - IsInventoryLocation
+  - IsMobile
+  - LocationType
+  - Name
+  - ShouldSyncWithOci
+
 Insert Address:
   sf_object: Address
   fields: 
@@ -20,23 +30,10 @@ Insert Address:
     - Timezone
     - LocationType
     - AddressType
-Insert Location:
-  sf_object: Location
-  fields:
-  - IsInventoryLocation
-  - IsMobile
-  - LocationType
-  - Name
-  - ShouldSyncWithOci
   lookups:
-    VisitorAddressId:
-      table:
-      - Address
-      after: Insert Address
-    ParentLocationId:
-      table:
-      - Location
-      after: Insert Location
+    ParentId:
+      table: Location
+
 Insert VolunteerEvent__c:
   sf_object: VolunteerEvent__c
   fields:

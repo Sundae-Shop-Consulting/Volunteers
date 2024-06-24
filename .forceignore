@@ -27,6 +27,7 @@ package.xml
 *.sharingRules
 *.AuthProvider
 *prm_*
+*dlrs__LookupRollupSummary2*
 
 
 # Components to ignore for packaging that we may want for unmanaged config
