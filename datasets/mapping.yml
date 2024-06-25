@@ -7,7 +7,6 @@ Insert Account:
       table:
       - Account
       after: Insert Account
-
 Insert Location:
   sf_object: Location
   fields:
@@ -16,7 +15,11 @@ Insert Location:
   - LocationType
   - Name
   - ShouldSyncWithOci
-
+  lookups:
+    ParentLocationId:
+      table:
+      - Location
+      after: Insert Location
 Insert Address:
   sf_object: Address
   fields: 
@@ -33,7 +36,6 @@ Insert Address:
   lookups:
     ParentId:
       table: Location
-
 Insert VolunteerEvent__c:
   sf_object: VolunteerEvent__c
   fields:
@@ -44,9 +46,12 @@ Insert Contact:
   fields:
   - DoNotCall
   - FirstName
+  - FirstVolunteerDate__c
   - HasOptedOutOfEmail
   - HasOptedOutOfFax
   - LastName
+  - LastVolunteerDate__c
+  - VolunteerHours__c
   lookups:
     AccountId:
       table:
@@ -66,6 +71,9 @@ Insert VolunteerPosition__c:
   - RequiredTraining__c
   - Status__c
   - TimeCommitment__c
+  - VolunteerActivities__c
+  - VolunteerHours__c
+  - VolunteersAssigned__c
   lookups:
     Location__c:
       table:
@@ -74,9 +82,11 @@ Insert VolunteerActivity__c:
   sf_object: VolunteerActivity__c
   fields:
   - Description__c
+  - FirstShiftDateTime__c
   - MaximumVolunteersAllowed__c
   - MinimumVolunteersNeeded__c
   - Name
+  - VolunteerHours__c
   - VolunteersAssigned__c
   lookups:
     Location__c:
@@ -112,6 +122,23 @@ Insert VolunteerActivityAssignment__c:
     VolunteerContact__c:
       table:
       - Contact
+Insert VolunteerHoursLog__c:
+  sf_object: VolunteerHoursLog__c
+  fields:
+  - Comments__c
+  - EndDateTime__c
+  - EndDate__c
+  - Hours__c
+  - PlannedStartDateTime__c
+  - StartDateTime__c
+  - StartDate__c
+  lookups:
+    VolunteerActivity__c:
+      table:
+      - VolunteerActivity__c
+    VolunteerContact__c:
+      table:
+      - Contact
 Insert VolunteerShift__c:
   sf_object: VolunteerShift__c
   fields:
@@ -128,23 +155,6 @@ Insert VolunteerShift__c:
     VolunteerActivity__c:
       table:
       - VolunteerActivity__c
-Insert VolunteerHoursLog__c:
-  sf_object: VolunteerHoursLog__c
-  fields:
-  - Comments__c
-  - EndDateTime__c
-  - EndDate__c
-  - Hours__c
-  - PlannedStartDateTime__c
-  - StartDateTime__c
-  - StartDate__c
-  lookups:
-    VolunteerContact__c:
-      table:
-      - Contact
-    VolunteerShift__c:
-      table:
-      - VolunteerShift__c
 Insert VolunteerShiftAssignment__c:
   sf_object: VolunteerShiftAssignment__c
   lookups:
