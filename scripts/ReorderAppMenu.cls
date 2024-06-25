@@ -1,3 +1,8 @@
+/**
+* @description Reorders the App Menu to put Volunteers first; used by reorder_app_menu CCI task.
+* @author Laura Meerkatz
+* @date 2024-06-25
+*/
 static final String VOLUNTEERS_APP_NAME = 'Volunteers';
 
 public static void setVolunteersAppToFirst() {
