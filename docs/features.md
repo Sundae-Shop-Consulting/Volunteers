@@ -60,7 +60,8 @@ As a volunteer manager, I can find volunteers who match the qualifications and a
 
 As a volunteer manager, I can see a calendar representation of all volunteer events or shifts.
 
-### V4S Shift Calendar (uses Google Calendar)
+### V4S Shift Calendar 
+Uses [FullCalendar](https://fullcalendar.io/)
 ![Screenshot of V4S shift calendar](images/v4s_shift_calendar.png)
 
 ## Volunteer Reports & Dashboards
