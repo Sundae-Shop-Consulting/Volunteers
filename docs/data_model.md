@@ -76,11 +76,11 @@ This model favors domain-specific custom objects over repurposing standard objec
 
 The following standard objects are used:
 * Contact
-* Account (Person Account)
 * Location
+* Address
 
 All other objects are custom.
 
 ### Contacts vs. Person Accounts
 
-This model is intended to support either modeling volunteers as Contacts or Person Accounts, though not within the same org. All volunteer-related objects contain lookups with both Contact and Account, both labeled Volunteer with API names to disambiguate (VolunteerContact__c or VolunteerAccount__c).
+This model is intended to support either modeling volunteers as Contacts, which should allow support for either Contact or Person Account based person models (NPSP, NPC or neither).
