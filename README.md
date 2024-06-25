@@ -18,8 +18,6 @@ Once you've set up CumulusCI, you can get a scratch org with an unmanaged versio
 
 `cci flow run dev_org`
 
-`cci task run load_dataset --mapping datasets/mapping.yml --sql_path datasets/sample-animalshelter.sql`
-
 ## Sample Data 
 
 Update data model for sample data. Review this file after generating as it may include objects you don't want.
