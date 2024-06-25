@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>VolunteersStillNeeded__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(AND(NOT(ISBLANK(MinimumVolunteersNeeded__c)), NOT(ISBLANK(VolunteersAssigned__c))), MinimumVolunteersNeeded__c - VolunteersAssigned__c, null)</formula>
+    <formula>IF(AND(NOT(ISBLANK(MinimumVolunteersNeeded__c)), NOT(ISBLANK(VolunteersAssigned__c))), IF((MinimumVolunteersNeeded__c > VolunteersAssigned__c), MinimumVolunteersNeeded__c - VolunteersAssigned__c, 0), null)</formula>
     <label>Volunteers Still Needed</label>
     <precision>18</precision>
     <required>false</required>
