@@ -280,7 +280,7 @@ CREATE TABLE "VolunteerActivity__c" (
 INSERT INTO "VolunteerActivity__c" VALUES('VolunteerActivity__c-1','Handle miscellaneous tasks throughout the day as assigned on site. Examples include:
 - Set up markers along the parade route before the parade begins. 
 - Hand out water at stations along the route. 
-- Pick up trash and route markers after the parade has ended.','2024-06-30T19:00:00.000+0000','20.0','10.0','Parade Support','','','','VolunteerEvent__c-1','VolunteerPosition__c-1');
+- Pick up trash and route markers after the parade has ended.','2024-06-30T19:00:00.000+0000','20.0','10.0','Parade Support','','0.0','','VolunteerEvent__c-1','VolunteerPosition__c-1');
 INSERT INTO "VolunteerActivity__c" VALUES('VolunteerActivity__c-2','Ongoing activity for data-entry related tasks. Input and manage vital information regarding shelter animals, adoptions, donations, and volunteers.','','5.0','1.0','Data Entry','','1.0','Location-1','','VolunteerPosition__c-3');
 INSERT INTO "VolunteerActivity__c" VALUES('VolunteerActivity__c-3','Join us Thursdays at 2 p.m. to clean litter boxes, change food and water, and cuddle with kittens.','2024-05-30T21:00:00.000+0000','5.0','2.0','Cat Care - Thursday Afternoons','2.5','1.0','Location-2','','VolunteerPosition__c-4');
 INSERT INTO "VolunteerActivity__c" VALUES('VolunteerActivity__c-4','As a volunteer at the Adoption Booth during Toe Beans on Parade, you''ll play a vital role in connecting potential adopters with our lovable shelter animals. Your duties will include:
@@ -297,7 +297,7 @@ Promoting Adoption: Advocate for the benefits of pet adoption and highlight the 
 
 Maintaining Booth Appearance: Ensure the booth is organized, clean, and attractive to visitors throughout the event.
 
-Your dedication and enthusiasm will help make this event a success by facilitating adoptions and spreading awareness about responsible pet ownership. Join us at the Adoption Booth and be a part of finding forever homes for our deserving animals!','2024-07-06T15:00:00.000+0000','6.0','2.0','Adoption Booth','','','','VolunteerEvent__c-1','VolunteerPosition__c-2');
+Your dedication and enthusiasm will help make this event a success by facilitating adoptions and spreading awareness about responsible pet ownership. Join us at the Adoption Booth and be a part of finding forever homes for our deserving animals!','2024-07-06T15:00:00.000+0000','6.0','2.0','Adoption Booth','','0.0','','VolunteerEvent__c-1','VolunteerPosition__c-2');
 CREATE TABLE "VolunteerEvent__c" (
 	id VARCHAR(255) NOT NULL, 
 	"Description__c" VARCHAR(255), 
@@ -373,9 +373,9 @@ INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-1','','2.0','5.0','2.0
 INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-2','','2.0','5.0','2.0','2024-05-30T21:00:00.000+0000','1.0','Location-2','VolunteerActivity__c-3');
 INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-3','','2.0','5.0','2.0','2024-06-20T21:00:00.000+0000','1.0','Location-2','VolunteerActivity__c-3');
 INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-4','','2.0','5.0','2.0','2024-06-13T21:00:00.000+0000','2.0','Location-2','VolunteerActivity__c-3');
-INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-5','<p>Route setup</p>','3.0','5.0','2.0','2024-07-05T19:00:00.000+0000','','','VolunteerActivity__c-1');
-INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-6','<p>Route cleanup</p>','3.0','10.0','2.0','2024-06-30T19:00:00.000+0000','','','VolunteerActivity__c-1');
-INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-7','','2.0','3.0','1.0','2024-07-06T15:00:00.000+0000','','','VolunteerActivity__c-4');
-INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-8','','2.0','3.0','1.0','2024-07-06T17:00:00.000+0000','','','VolunteerActivity__c-4');
-INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-9','','2.0','3.0','1.0','2024-07-06T19:00:00.000+0000','','','VolunteerActivity__c-4');
+INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-5','<p>Route setup</p>','3.0','5.0','2.0','2024-07-05T19:00:00.000+0000','0.0','','VolunteerActivity__c-1');
+INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-6','<p>Route cleanup</p>','3.0','10.0','2.0','2024-06-30T19:00:00.000+0000','0.0','','VolunteerActivity__c-1');
+INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-7','','2.0','3.0','1.0','2024-07-06T15:00:00.000+0000','0.0','','VolunteerActivity__c-4');
+INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-8','','2.0','3.0','1.0','2024-07-06T17:00:00.000+0000','0.0','','VolunteerActivity__c-4');
+INSERT INTO "VolunteerShift__c" VALUES('VolunteerShift__c-9','','2.0','3.0','1.0','2024-07-06T19:00:00.000+0000','0.0','','VolunteerActivity__c-4');
 COMMIT;
