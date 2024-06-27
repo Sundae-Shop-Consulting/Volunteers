@@ -15,11 +15,6 @@ Insert Location:
   - LocationType
   - Name
   - ShouldSyncWithOci
-  lookups:
-    ParentLocationId:
-      table:
-      - Location
-      after: Insert Location
 Insert Address:
   sf_object: Address
   fields: 
