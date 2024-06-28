@@ -2,10 +2,10 @@
 This is an open source volunteer management application for Salesforce. The MVP will target volunteer manager use cases: Finding and assigning volunteers, reporting on volunteer data, and managing volunteer activities. The short-term goal of the project is to complete an MVP version of internal, volunteer manager features of [Volunteers for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000003JBggEAG) by August 7, 2024. 
 
 This project is:
-- Conceptually based on the features supported in Volunteers for Salesforce, but built on a [new data model](docs/data_model.md) compatible with a broader range of licenses.
+- Conceptually based on the features supported in Volunteers for Salesforce, but built on a [new data model](https://github.com/Sundae-Shop-Consulting/Volunteers/wiki/Data-Model) compatible with a broader range of licenses.
 - Will be compatible with either NPSP or NPC. 
 
-Features included in the volunteer portal of V4S or any significant enhancements are out of scope until the MVP goal is complete. The [features document](docs/features.md) includes an overview of V4S features for reference as well as a high-level description of how those features might be replaced. While we want to solve the same problems that V4S solved, we may do so in entirely different ways to improve functionality and user experience. Anything in this repository should be considered an early draft that will evolve over time.
+Additional information about data model and features can be found in the [project wiki](https://github.com/Sundae-Shop-Consulting/Volunteers/wiki).
 
 Email laura@sundaeshopconsulting.com to get involved.
 
