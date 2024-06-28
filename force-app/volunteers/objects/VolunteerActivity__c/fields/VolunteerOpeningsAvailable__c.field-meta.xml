@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>VolunteerOpeningsAvailable__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(AND(NOT(ISBLANK(MaximumVolunteersAllowed__c)), NOT(ISBLANK(VolunteersAssigned__c))), MaximumVolunteersAllowed__c - VolunteersAssigned__c, null)</formula>
+    <formula>IF(AND(NOT(ISBLANK(MaximumVolunteersAllowed__c)), NOT(ISBLANK(VolunteersAssigned__c))), IF((MaximumVolunteersAllowed__c > VolunteersAssigned__c), MaximumVolunteersAllowed__c - VolunteersAssigned__c, 0), null)</formula>
     <inlineHelpText>Maximum Volunteers Allowed - Volunteers Assigned</inlineHelpText>
     <label>Volunteer Openings Available</label>
     <precision>18</precision>

@@ -29,6 +29,8 @@ flows:
                     mapping: datasets/mapping.yml
                     sql_path: datasets/sample-animalshelter.sql
                     drop_missing_schema: True
+            13:
+                task: reorder_app_menu
 
     make_community:
         steps:
@@ -120,6 +122,13 @@ tasks:
         options:
             data_files:
                 - "datasets/communityuser.json"
+
+    reorder_app_menu:
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        group: "Volunteers Config"
+        options:
+            path: scripts/ReorderAppMenu.cls
+            apex: setVolunteersAppToFirst();
 
 orgs:
     scratch:
