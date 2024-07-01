@@ -96,9 +96,6 @@ Insert VolunteerActivity__c:
 Insert VolunteerPositionAssignment__c:
   sf_object: VolunteerPositionAssignment__c
   lookups:
-    VolunteerAccount__c:
-      table:
-      - Account
     VolunteerContact__c:
       table:
       - Contact
@@ -108,9 +105,6 @@ Insert VolunteerPositionAssignment__c:
 Insert VolunteerActivityAssignment__c:
   sf_object: VolunteerActivityAssignment__c
   lookups:
-    VolunteerAccount__c:
-      table:
-      - Account
     VolunteerActivity__c:
       table:
       - VolunteerActivity__c
@@ -153,9 +147,6 @@ Insert VolunteerShift__c:
 Insert VolunteerShiftAssignment__c:
   sf_object: VolunteerShiftAssignment__c
   lookups:
-    VolunteerAccount__c:
-      table:
-      - Account
     VolunteerContact__c:
       table:
       - Contact

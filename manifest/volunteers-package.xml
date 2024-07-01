@@ -10,7 +10,6 @@
     </types>
     <types>
         <members>VolunteerActivityAssignment__c.VolunteerContact__c</members>
-        <members>VolunteerActivityAssignment__c.VolunteerAccount__c</members>
         <members>VolunteerActivityAssignment__c.VolunteerActivity__c</members>
         <members>VolunteerActivity__c.Description__c</members>
         <members>VolunteerActivity__c.VolunteerEvent__c</members>
@@ -32,7 +31,6 @@
         <members>VolunteerHoursLog__c.VolunteerContact__c</members>
         <members>VolunteerHoursLog__c.VolunteerActivity__c</members>
         <members>VolunteerPositionAssignment__c.VolunteerContact__c</members>
-        <members>VolunteerPositionAssignment__c.VolunteerAccount__c</members>
         <members>VolunteerPositionAssignment__c.VolunteerPosition__c</members>
         <members>VolunteerPosition__c.Description__c</members>
         <members>VolunteerPosition__c.Duties__c</members>
@@ -54,7 +52,6 @@
         <members>VolunteerShift__c.VolunteerOpeningsAvailable__c</members>
         <members>VolunteerShift__c.VolunteersStillNeeded__c</members>
         <members>VolunteerShiftAssignment__c.VolunteerContact__c</members>
-        <members>VolunteerShiftAssignment__c.VolunteerAccount__c</members>
         <members>VolunteerShiftAssignment__c.VolunteerShift__c</members>
         <name>CustomField</name>
     </types>
