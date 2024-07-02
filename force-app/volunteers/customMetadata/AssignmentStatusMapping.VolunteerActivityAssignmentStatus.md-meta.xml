@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>CompletedValues__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Completed</value>
     </values>
     <values>
         <field>MappedObject__c</field>
