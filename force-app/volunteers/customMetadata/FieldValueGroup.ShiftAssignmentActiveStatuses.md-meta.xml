@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>Volunteer Shift Assignment Status</label>
+    <label>Shift Assignment Active Statuses</label>
     <protected>false</protected>
     <values>
-        <field>ActiveValues__c</field>
+        <field>GroupValues__c</field>
         <value xsi:type="xsd:string">Approved</value>
     </values>
     <values>
-        <field>CompletedValues__c</field>
-        <value xsi:type="xsd:string">Completed</value>
+        <field>IncludeBlankValuesInThisGroup__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>MappedObject__c</field>

@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Active__c</fullName>
     <externalId>false</externalId>
-    <formula>AND(NOT(ISBLANK(TEXT(Status__c))), CONTAINS($CustomMetadata.AssignmentStatusMapping__mdt.VolunteerPositionAssignmentStatus.ActiveValues__c, TEXT(Status__c)))</formula>
+    <formula>AND(OR(NOT(ISBLANK(TEXT(Status__c))), $CustomMetadata.FieldValueGroup__mdt.PositionAssignmentActiveStatuses.IncludeBlankValuesInThisGroup__c), CONTAINS($CustomMetadata.FieldValueGroup__mdt.PositionAssignmentActiveStatuses.GroupValues__c,  TEXT(Status__c)))</formula>
     <label>Active</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

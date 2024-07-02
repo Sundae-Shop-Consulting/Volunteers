@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Maps values to respective categories, like determining which Status values count as Active or Completed.</description>
+    <label>Field Value Group</label>
+    <pluralLabel>Field Value Groups</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
