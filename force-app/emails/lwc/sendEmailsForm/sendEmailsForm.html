@@ -1,0 +1,69 @@
+<template>
+    <lightning-quick-action-panel header="Send Email">
+        <lightning-select
+            name="From"
+            label="From"
+            value={orgWideEmailAddressId}
+            options={fromAddressOptions}
+            onchange={handleFromChange}>
+        </lightning-select>
+        <div class="slds-form-element slds-form-element__readonly" lwc:if={hasRecipients}>
+            <span class="slds-form-element__label">
+                To
+            </span>
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__static">
+                    <div class="slds-pill_container">
+                        <template for:each={recipientInfo.recipients} for:item="recipient">
+                            <span class="slds-pill recipient-pill" key={recipient.id}>
+                                <span class="slds-pill__icon_container" style={recipientInfo.colorStyle}>
+                                    <span class="slds-icon_container">
+                                        <img src={recipientInfo.iconUrl}>
+                                    </span>
+                                </span>
+                                <span class="slds-pill__label">{recipient.name}</span>
+                            </span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <lightning-input
+            type="text"
+            label="Subject"
+            onchange={handleSubjectChange}
+            placeholder="Enter subject...">
+        </lightning-input>
+        <lightning-input-rich-text
+            formats={richTextAllowedFormats}
+            onchange={handleMessageChange}
+            label="Message"
+            label-visible>
+        </lightning-input-rich-text>
+        <div class="slds-form-element slds-form-element__readonly" lwc:if={hasRelatedToName}>
+            <span class="slds-form-element__label">
+                Related To
+            </span>
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__static">
+                    <span class="slds-pill related-to-pill">
+                        <span class="slds-pill__icon_container" style={relatedTo.colorStyle}>
+                            <span class="slds-icon_container">
+                                <img src={relatedTo.iconUrl}>
+                            </span>
+                        </span>
+                        <span class="slds-pill__label">{relatedTo.name}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div slot="footer">
+            <lightning-button
+                variant="brand"
+                label="Send"
+                onclick={handleClickSend}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+    
+</template>
