@@ -1,0 +1,133 @@
+<template>
+    <lightning-quick-action-panel header={label.emailSendButton}>
+
+        <lightning-select
+            name={label.emailFromLabel}
+            label={label.emailFromLabel}
+            value={orgWideEmailAddressId}
+            options={fromAddressOptions}
+            onchange={handleFromChange}>
+        </lightning-select>
+
+        <div class={recipientsFormElementClass}>
+            <span class="slds-form-element__label">
+                <abbr class="slds-required" title="required">*</abbr>
+                {label.emailToLabel}
+            </span>
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__static">
+                    <div class={recipientsPillContainerClass}>
+                        <template lwc:if={hasRecipients}>
+                            <template lwc:if={hasTooManyRecipients}>
+                                <span class="slds-pill recipient-pill">
+                                    <span class="slds-pill__icon_container">
+                                        <lightning-icon
+                                            icon-name="standard:list_email"
+                                            size="small">
+                                        </lightning-icon>
+                                    </span>
+                                    <span class="slds-pill__label">
+                                        {tooManyRecipientsLabel}
+                                    </span>
+                                </span>
+                            </template>
+                            <template
+                                for:each={recipientPills}
+                                for:item="recipient"
+                                lwc:else>
+                                <span
+                                    class="slds-pill recipient-pill"
+                                    key={recipient.id}>
+                                    <span class="slds-pill__icon_container">
+                                        <lightning-icon
+                                            icon-name={recipient.iconName}
+                                            size="small">
+                                        </lightning-icon>
+                                    </span>
+                                    <span class="slds-pill__label">
+                                        {recipient.displayName}
+                                    </span>
+                                </span>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="slds-form-element__help"
+                lwc:if={recipientsHelpMessage}>
+                    {recipientsHelpMessage}
+            </div>
+            <button
+                class="slds-button"
+                onclick={showRecipientsModal}
+                lwc:if={hasRecipients}>
+                    {label.emailViewRecipients}
+            </button>
+        </div>
+
+        <lightning-input
+            type="text"
+            label={label.emailSubjectLabel}
+            data-id={label.emailSubjectLabel}
+            onchange={handleSubjectChange}
+            placeholder={label.emailEnterSubject}
+            required>
+        </lightning-input>
+
+        <lightning-input-rich-text
+            formats={richTextAllowedFormats}
+            onchange={handleBodyChange}
+            onblur={handleBodyBlur}
+            label={label.emailMessageLabel}
+            valid={isBodyVisiblyValid}
+            message-when-bad-input={bodyErrorMessage}
+            label-visible
+            required>
+        </lightning-input-rich-text>
+
+        <!-- @todo
+        <lightning-button-group class="slds-m-top_xx-small">
+            <lightning-button-icon
+                icon-name="utility:insert_template"
+                alternative-text="Choose template"
+                tooltip="Choose template"
+                size="small">
+            </lightning-button-icon>
+        </lightning-button-group>
+        -->
+
+        <div
+            class="slds-form-element slds-form-element__readonly"
+            lwc:if={hasRelatedToName}>
+            <span class="slds-form-element__label">
+                {label.emailRelatedToLabel}
+            </span>
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__static">
+                    <span class="slds-pill related-to-pill">
+                        <span
+                            class="slds-pill__icon_container"
+                            style={relatedToIconStyle}
+                            lwc:if={hasRelatedToIcon}>
+                            <span class="slds-icon_container">
+                                <img src={relatedTo.iconUrl}>
+                            </span>
+                        </span>
+                        <span class="slds-pill__label">{relatedTo.name}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div slot="footer">
+            <lightning-button
+                variant="brand"
+                label={label.emailSendButton}
+                disabled={isSendDisabled}
+                onclick={handleClickSend}>
+            </lightning-button>
+        </div>
+
+    </lightning-quick-action-panel>
+</template>

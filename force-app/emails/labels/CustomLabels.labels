@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>emailCloseButton</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for close button on send email dialog</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>emailDeliveryReportHeading</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Heading for email delivery report</shortDescription>
+        <value>Email Delivery Report</value>
+    </labels>
+    <labels>
+        <fullName>emailEmailLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for Email column in recipient table</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>emailEnterSubject</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Placeholder text for subject field on email form</shortDescription>
+        <value>Enter subject...</value>
+    </labels>
+    <labels>
+        <fullName>emailErrorGetFromAddress</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when fail to retrieve from address options</shortDescription>
+        <value>Unable to retrieve originator options.</value>
+    </labels>
+    <labels>
+        <fullName>emailErrorGetRecipients</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when unable to get recipient info</shortDescription>
+        <value>Unable to retrieve recipient information.</value>
+    </labels>
+    <labels>
+        <fullName>emailErrorInputRequired</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when required field is empty</shortDescription>
+        <value>Complete this field.</value>
+    </labels>
+    <labels>
+        <fullName>emailErrorMessageLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for column in delivery report</shortDescription>
+        <value>Error Message</value>
+    </labels>
+    <labels>
+        <fullName>emailFromLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for From field on email form</shortDescription>
+        <value>From</value>
+    </labels>
+    <labels>
+        <fullName>emailMessageLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for Message field on email form</shortDescription>
+        <value>Message</value>
+    </labels>
+    <labels>
+        <fullName>emailNotSentHeading</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Heading for delivery report</shortDescription>
+        <value>The following emails could not be sent.</value>
+    </labels>
+    <labels>
+        <fullName>emailRecipientCountLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label shown when too many recipients</shortDescription>
+        <value>{0} Recipients</value>
+    </labels>
+    <labels>
+        <fullName>emailRecipientNameLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Column heading for recipients</shortDescription>
+        <value>Recipient Name</value>
+    </labels>
+    <labels>
+        <fullName>emailRecipientsInvalid</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Warning shown when recipient email is invalid</shortDescription>
+        <value>Some recipients do not have a valid email address.  Please review recipient details.</value>
+    </labels>
+    <labels>
+        <fullName>emailRecipientsLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Column heading for recipients</shortDescription>
+        <value>Recipients</value>
+    </labels>
+    <labels>
+        <fullName>emailRecipientsRemoved</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Warning shown when recipient list is filtered</shortDescription>
+        <value>Some invalid recipients were removed.</value>
+    </labels>
+    <labels>
+        <fullName>emailRecipientsRequired</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error shown when no recipients</shortDescription>
+        <value>Recipients are required.</value>
+    </labels>
+    <labels>
+        <fullName>emailRelatedToLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for Related To field on email form</shortDescription>
+        <value>Related To</value>
+    </labels>
+    <labels>
+        <fullName>emailSendButton</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email button</shortDescription>
+        <value>Send Email</value>
+    </labels>
+    <labels>
+        <fullName>emailSendError</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Generic error shown when email send fails</shortDescription>
+        <value>Send Email Error</value>
+    </labels>
+    <labels>
+        <fullName>emailSentSuccess</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message when email send succeeds</shortDescription>
+        <value>Emails Successfully Sent</value>
+    </labels>
+    <labels>
+        <fullName>emailSentSuccessMsg</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message when email send succeeds</shortDescription>
+        <value>Successfully sent {0} email(s).</value>
+    </labels>
+    <labels>
+        <fullName>emailSubjectLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for Subject field on email form</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>emailToLabel</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for To field on email form</shortDescription>
+        <value>To</value>
+    </labels>
+    <labels>
+        <fullName>emailViewRecipients</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for view recipient details button on email form</shortDescription>
+        <value>View recipient details</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailInsufficientAccess</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when user cant send email</shortDescription>
+        <value>Insufficient access.</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailInsufficientLimit</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when email limit would be exceeded</shortDescription>
+        <value>Sending {0} email(s) would exceed the available daily email limit.</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailInvalidAddress</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when email address is invalid</shortDescription>
+        <value>Invalid email address.</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailInvalidRecipient</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when recipient is not valid</shortDescription>
+        <value>Invalid recipient or related record.</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailOrgNotPermitted</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when org is not configured to allow email</shortDescription>
+        <value>This organization is not permitted to send email.</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailRecipientOptOut</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error when recipient has opted out of email</shortDescription>
+        <value>Recipient has opted out of receiving email.</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailUnableToSend</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Generic error when recipient email fails</shortDescription>
+        <value>Unable to send email.</value>
+    </labels>
+    <labels>
+        <fullName>errorEmailUserNotPermitted</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error shown when user doesnt have email perms</shortDescription>
+        <value>"Send Email" permission is required to send email.</value>
+    </labels>
+    <labels>
+        <fullName>errorInvalidOrgWideAddress</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error shown when invalid org-wide address</shortDescription>
+        <value>User could not retrieve org wide email addresses.  Please review your security configuration.</value>
+    </labels>
+</CustomLabels>

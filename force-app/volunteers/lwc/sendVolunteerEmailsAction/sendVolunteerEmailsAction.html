@@ -1,0 +1,8 @@
+<template>
+    <c-send-emails-action
+        lwc:if={hasAssignedVolunteerIds}
+        target-object-ids={assignedVolunteerIds}
+        what-id={recordId}
+        what-object-api-name={objectApiName}>
+    </c-send-emails-action>
+</template>
