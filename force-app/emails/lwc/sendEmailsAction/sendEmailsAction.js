@@ -1,6 +1,8 @@
 import { LightningElement, api, wire } from 'lwc';
-import { getRecord, getFieldValue } from "lightning/uiRecordApi";
-import { getObjectInfo } from "lightning/uiObjectInfoApi";
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+import { getObjectInfo } from 'lightning/uiObjectInfoApi';
+import { CloseActionScreenEvent } from 'lightning/actions';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getFromAddressOptions from '@salesforce/apex/SendEmailsService.getFromAddressOptions';
 import getRecipientInfo from '@salesforce/apex/SendEmailsService.getRecipientInfo';
 import sendEmail from '@salesforce/apex/SendEmailsService.sendEmail';
@@ -91,6 +93,21 @@ export default class SendEmailsAction extends LightningElement {
 
         console.log(email); // @debug
 
-        sendEmail({email});
+        sendEmail({email})
+            .then((result) => {
+                // close action event must be both bubbles and composed true
+                // because this action component is not expected to be the root
+                // component for the action-- an alternative to this might be
+                // to handle and re-emit the event in the root component
+                this.dispatchEvent(new CloseActionScreenEvent({
+                    bubbles: true,
+                    composed: true
+                }));
+                this.dispatchEvent(new ShowToastEvent({
+                    title: "Emails Successfully Sent",
+                    message: `Successfully sent ${this.recipientInfo.recipients.length} emails.`,
+                    variant: "success"
+                }));
+            });
     }
 }

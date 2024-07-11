@@ -95,7 +95,7 @@ public with sharing class SendEmailsService {
             message.setHtmlBody(email.htmlBody);
             message.setWhatId(email.whatId);
             message.setOptOutPolicy('FILTER');
-            // @todo consider message.setTreatBodiesAsTemplate(true)
+            message.setTreatBodiesAsTemplate(true);
 
             if (email.orgWideEmailAddressId != null) {
                 message.setOrgWideEmailAddressId(email.orgWideEmailAddressId);
