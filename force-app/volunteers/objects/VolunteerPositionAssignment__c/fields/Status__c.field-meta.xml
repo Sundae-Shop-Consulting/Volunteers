@@ -27,9 +27,9 @@
                 <label>Active</label>
             </value>
             <value>
-                <fullName>No Longer Active</fullName>
+                <fullName>Inactive</fullName>
                 <default>false</default>
-                <label>No Longer Active</label>
+                <label>Inactive</label>
             </value>
         </valueSetDefinition>
     </valueSet>
