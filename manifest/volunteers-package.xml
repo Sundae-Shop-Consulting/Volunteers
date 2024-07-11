@@ -65,9 +65,14 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>VolunteerActivityAssignmentStatus</members>
-        <members>VolunteerPositionAssignmentStatus</members>
-        <members>VolunteerShiftAssignmentStatus</members>
+        <members>ActivityAssignmentActiveStatuses</members>
+        <members>ActivityAssignmentCompletedStatuses</members>
+        <members>PositionAssignmentActiveStatuses</members>
+        <members>PositionAssignmentCompletedStatuses</members>
+        <members>ShiftAssignmentActiveStatuses</members>
+        <members>ShiftAssignmentCompletedStatuses</members>
+        <members>VolunteerActivityActiveStatuses</members>
+        <members>VolunteerActivityCompletedStatuses</members>
         <name>CustomMetadata</name>
     </types>
     <types>
