@@ -121,11 +121,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>VolunteerActivityAssignment__c.VolunteerAccount__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>VolunteerActivityAssignment__c.VolunteerActivity__c</field>
         <readable>true</readable>
     </fieldPermissions>
