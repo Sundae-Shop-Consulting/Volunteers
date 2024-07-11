@@ -1,4 +1,6 @@
 import { LightningElement, api } from 'lwc';
+import LightningModal from 'lightning/modal';
+import recipientsModal from './recipientsModal.html';
 
 export default class SendEmailsForm extends LightningElement {
     @api
@@ -22,6 +24,35 @@ export default class SendEmailsForm extends LightningElement {
 
     get hasRecipients() {
         return Array.isArray(this.recipientInfo?.recipients) && this.recipientInfo.recipients.length > 0;
+    }
+
+    get recipientPills() {
+        // if there are more than a certain number of recipients, we just show
+        // one single pill with the number of recipients.  Otherwise, we show a
+        // pill for each recipient.  This is to accommodate scenarios where
+        // dozens or hundreds of recipients are provided.
+        if (this.hasRecipients) {
+            if (this.recipientInfo.recipients.length > 10) {
+                return [
+                    {
+                        id: "too-many-recipients-pill",
+                        name: `${this.recipientInfo.recipients.length} recipients`,
+                        colorStyle: this.recipientInfo.colorStyle,
+                        iconUrl: this.recipientInfo.iconUrl,
+                    }
+                ];
+            } else {
+                return this.recipientInfo.recipients.map((recipient) => (
+                    {
+                        ...recipient,
+                        colorStyle: this.recipientInfo.colorStyle,
+                        iconUrl: this.recipientInfo.iconUrl,
+                    }
+                ));
+            }
+        } else {
+            return [];
+        }
     }
 
     orgWideEmailAddressId = '';
@@ -50,6 +81,13 @@ export default class SendEmailsForm extends LightningElement {
         'script',
         'blockquote',
     ];
+
+    showRecipientsModal(event) {
+        RecipientsModal.open({
+            size: 'small',
+            recipientInfo: this.recipientInfo,
+        });
+    }
 
     handleFromChange(event) {
         this.orgWideEmailAddressId = event.target.value;
@@ -80,3 +118,30 @@ export default class SendEmailsForm extends LightningElement {
         // @todo close modal
     }
 }
+
+class RecipientsModal extends LightningModal {
+    @api
+    recipientInfo;
+
+    columns = [
+        {
+            label: "Recipient Name",
+            fieldName: "name",
+            type: "text"
+        },
+        {
+            label: "Email",
+            fieldName: "email",
+            type: "email"
+        },
+    ];
+
+    get recipients() {
+        return this.recipientInfo?.recipients || [];
+    }
+
+    render() {
+        return recipientsModal;
+    }
+}
+

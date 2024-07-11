@@ -13,12 +13,12 @@
             </span>
             <div class="slds-form-element__control">
                 <div class="slds-form-element__static">
-                    <div class="slds-pill_container">
-                        <template for:each={recipientInfo.recipients} for:item="recipient">
+                    <div class="slds-pill_container recipient-pill-container">
+                        <template for:each={recipientPills} for:item="recipient">
                             <span class="slds-pill recipient-pill" key={recipient.id}>
-                                <span class="slds-pill__icon_container" style={recipientInfo.colorStyle}>
+                                <span class="slds-pill__icon_container" style={recipient.colorStyle}>
                                     <span class="slds-icon_container">
-                                        <img src={recipientInfo.iconUrl}>
+                                        <img src={recipient.iconUrl}>
                                     </span>
                                 </span>
                                 <span class="slds-pill__label">{recipient.name}</span>
@@ -27,6 +27,7 @@
                     </div>
                 </div>
             </div>
+            <button class="slds-button" onclick={showRecipientsModal}>View recipient details</button>
         </div>
         <lightning-input
             type="text"

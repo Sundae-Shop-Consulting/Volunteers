@@ -1,3 +1,7 @@
 .related-to-pill, .recipient-pill {
     padding: var(--lwc-spacingXxxSmall, 0.125rem);
 }
+
+.recipient-pill-container {
+    flex-wrap: wrap;
+}
