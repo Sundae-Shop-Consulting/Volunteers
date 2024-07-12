@@ -15,7 +15,7 @@
         <relatedTable>VolunteerPositionAssignment__c</relatedTable>
         <relatedTableJoinColumn>VolunteerContact__c</relatedTableJoinColumn>
     </crossFilters>
-    <description>All Contacts with a Volunteer Position Assignment.</description>
+    <description>All Contacts with a Volunteer Position Assignment grouped by Contact.</description>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
