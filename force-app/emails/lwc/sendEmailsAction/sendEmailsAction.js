@@ -3,9 +3,10 @@ import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import { CloseActionScreenEvent } from 'lightning/actions';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import getFromAddressOptions from '@salesforce/apex/SendEmailsService.getFromAddressOptions';
-import getRecipientInfo from '@salesforce/apex/SendEmailsService.getRecipientInfo';
-import sendEmail from '@salesforce/apex/SendEmailsService.sendEmail';
+
+import getFromAddressOptions from '@salesforce/apex/EmailController.getFromAddressOptions';
+import getRecipientsById from '@salesforce/apex/EmailController.getRecipientsById';
+import sendEmail from '@salesforce/apex/EmailController.sendEmail';
 
 export default class SendEmailsAction extends LightningElement {
     @api
@@ -45,26 +46,14 @@ export default class SendEmailsAction extends LightningElement {
     @api
     targetObjectIds;
 
-    targetObjectApiName;
-    recipientInfo = {};
+    recipients;
 
-    @wire(getRecipientInfo, {targetObjectIds: "$targetObjectIds"})
-    wiredRecipientInfo(recipientInfoList) {
-        if (recipientInfoList.data) {
-            this.targetObjectApiName = recipientInfoList.data.objectApiName;
-            this.recipientInfo.recipients = recipientInfoList.data.recipients;
+    @wire(getRecipientsById, {targetObjectIds: "$targetObjectIds"})
+    wiredRecipientInfo(recipients) {
+        if (recipients.data) {
+            this.recipients = recipients.data;
         }
         // @todo handle errors
-    }
-
-    @wire(getObjectInfo, {objectApiName: "$targetObjectApiName"})
-    wiredGetTargetObjectInfo(objectInfo) {
-        if (objectInfo.data) {
-            this.recipientInfo.iconUrl = objectInfo.data?.themeInfo.iconUrl;
-            this.recipientInfo.color = objectInfo.data?.themeInfo.color;
-            this.recipientInfo.colorStyle = `background-color: #${this.recipientInfo.color}`;
-        }
-        // @todo handle errors?
     }
 
     fromAddressOptions = [];
@@ -80,7 +69,7 @@ export default class SendEmailsAction extends LightningElement {
     handleSendEmail(event) {
         // @todo validation
 
-        const email = {
+        const emailRequest = {
             subject: event?.detail?.subject,
             htmlBody: event?.detail?.htmlBody,
             whatId: this.whatId,
@@ -88,12 +77,12 @@ export default class SendEmailsAction extends LightningElement {
         };
 
         if (event?.detail?.orgWideEmailAddressId) {
-            email.orgWideEmailAddressId = event.detail.orgWideEmailAddressId;
+            emailRequest.orgWideEmailAddressId = event.detail.orgWideEmailAddressId;
         }
 
-        console.log(email); // @debug
+        console.log(emailRequest); // @debug
 
-        sendEmail({email})
+        sendEmail({emailRequest})
             .then((result) => {
                 // close action event must be both bubbles and composed true
                 // because this action component is not expected to be the root

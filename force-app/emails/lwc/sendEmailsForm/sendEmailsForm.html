@@ -1,5 +1,6 @@
 <template>
     <lightning-quick-action-panel header="Send Email">
+
         <lightning-select
             name="From"
             label="From"
@@ -7,6 +8,7 @@
             options={fromAddressOptions}
             onchange={handleFromChange}>
         </lightning-select>
+
         <div class="slds-form-element slds-form-element__readonly" lwc:if={hasRecipients}>
             <span class="slds-form-element__label">
                 To
@@ -14,14 +16,26 @@
             <div class="slds-form-element__control">
                 <div class="slds-form-element__static">
                     <div class="slds-pill_container recipient-pill-container">
-                        <template for:each={recipientPills} for:item="recipient">
-                            <span class="slds-pill recipient-pill" key={recipient.id}>
-                                <span class="slds-pill__icon_container" style={recipient.colorStyle}>
-                                    <span class="slds-icon_container">
-                                        <img src={recipient.iconUrl}>
-                                    </span>
+                        <template lwc:if={hasTooManyRecipients}>
+                            <span class="slds-pill recipient-pill">
+                                <span class="slds-pill__icon_container">
+                                    <lightning-icon
+                                        icon-name="standard:list_email"
+                                        size="small">
+                                    </lightning-icon>
                                 </span>
-                                <span class="slds-pill__label">{recipient.name}</span>
+                                <span class="slds-pill__label">{tooManyRecipientsLabel}</span>
+                            </span>
+                        </template>
+                        <template for:each={recipientPills} for:item="recipient" lwc:else>
+                            <span class="slds-pill recipient-pill" key={recipient.id}>
+                                <span class="slds-pill__icon_container">
+                                    <lightning-icon
+                                        icon-name={recipient.iconName}
+                                        size="small">
+                                    </lightning-icon>
+                                </span>
+                                <span class="slds-pill__label">{recipient.displayName}</span>
                             </span>
                         </template>
                     </div>
@@ -29,18 +43,30 @@
             </div>
             <button class="slds-button" onclick={showRecipientsModal}>View recipient details</button>
         </div>
+
         <lightning-input
             type="text"
             label="Subject"
             onchange={handleSubjectChange}
             placeholder="Enter subject...">
         </lightning-input>
+
         <lightning-input-rich-text
             formats={richTextAllowedFormats}
             onchange={handleMessageChange}
             label="Message"
             label-visible>
         </lightning-input-rich-text>
+
+        <lightning-button-group class="slds-m-top_xx-small">
+            <lightning-button-icon
+                icon-name="utility:insert_template"
+                alternative-text="Choose template"
+                tooltip="Choose template"
+                size="small">
+            </lightning-button-icon>
+        </lightning-button-group>
+
         <div class="slds-form-element slds-form-element__readonly" lwc:if={hasRelatedToName}>
             <span class="slds-form-element__label">
                 Related To
@@ -58,6 +84,7 @@
                 </div>
             </div>
         </div>
+
         <div slot="footer">
             <lightning-button
                 variant="brand"
@@ -65,6 +92,6 @@
                 onclick={handleClickSend}>
             </lightning-button>
         </div>
+
     </lightning-quick-action-panel>
-    
 </template>

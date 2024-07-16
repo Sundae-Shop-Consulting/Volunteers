@@ -15,44 +15,39 @@ export default class SendEmailsForm extends LightningElement {
     @api
     relatedTo;
 
+    _recipients;
+
     @api
-    recipientInfo;
+    recipients;
 
     get hasRelatedToName() {
         return !!this.relatedTo?.name;
     }
 
     get hasRecipients() {
-        return Array.isArray(this.recipientInfo?.recipients) && this.recipientInfo.recipients.length > 0;
+        return Array.isArray(this.recipients) && this.recipients.length > 0;
     }
 
+    get hasTooManyRecipients() {
+        return this.hasRecipients && this.recipients.length > 10;
+    }
+
+    get tooManyRecipientsLabel() {
+        console.log('in tooManyRecipientsLabel');
+        return `${this.recipients.length} Recipients`;
+    }
+
+    iconMap = new Map([
+        ["Contact", "standard:contact"],
+        ["User", "standard:user"],
+        ["Lead", "standard:lead"],
+    ]);
+
     get recipientPills() {
-        // if there are more than a certain number of recipients, we just show
-        // one single pill with the number of recipients.  Otherwise, we show a
-        // pill for each recipient.  This is to accommodate scenarios where
-        // dozens or hundreds of recipients are provided.
-        if (this.hasRecipients) {
-            if (this.recipientInfo.recipients.length > 10) {
-                return [
-                    {
-                        id: "too-many-recipients-pill",
-                        name: `${this.recipientInfo.recipients.length} recipients`,
-                        colorStyle: this.recipientInfo.colorStyle,
-                        iconUrl: this.recipientInfo.iconUrl,
-                    }
-                ];
-            } else {
-                return this.recipientInfo.recipients.map((recipient) => (
-                    {
-                        ...recipient,
-                        colorStyle: this.recipientInfo.colorStyle,
-                        iconUrl: this.recipientInfo.iconUrl,
-                    }
-                ));
-            }
-        } else {
-            return [];
-        }
+        return this.recipients.map((recipient) => ({
+            ...recipient,
+            iconName: this.iconMap.get(recipient.sObjectType) || "standard:email_chatter"
+        }));
     }
 
     orgWideEmailAddressId = '';
@@ -80,12 +75,13 @@ export default class SendEmailsForm extends LightningElement {
         'code-block',
         'script',
         'blockquote',
+        'image', // @debug testing
     ];
 
     showRecipientsModal(event) {
         RecipientsModal.open({
             size: 'small',
-            recipientInfo: this.recipientInfo,
+            recipients: this.recipients,
         });
     }
 
@@ -114,31 +110,25 @@ export default class SendEmailsForm extends LightningElement {
                 }
             }
         ));
-
-        // @todo close modal
     }
 }
 
 class RecipientsModal extends LightningModal {
     @api
-    recipientInfo;
+    recipients;
 
     columns = [
         {
             label: "Recipient Name",
-            fieldName: "name",
+            fieldName: "displayName",
             type: "text"
         },
         {
             label: "Email",
-            fieldName: "email",
+            fieldName: "address",
             type: "email"
         },
     ];
-
-    get recipients() {
-        return this.recipientInfo?.recipients || [];
-    }
 
     render() {
         return recipientsModal;
