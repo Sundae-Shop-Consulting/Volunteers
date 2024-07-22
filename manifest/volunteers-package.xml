@@ -134,5 +134,25 @@
         <members>VolunteerManager</members>
         <name>PermissionSet</name>
     </types>
+    <types>
+    	<members>VolunteerReports/UpcomingShiftsNeedingVolunteers</members>
+        <members>VolunteerReports/ActivitiesWithVolunteersNeeded</members>
+        <members>VolunteerReports/AvailableVolunteerShifts</members>
+        <members>VolunteerReports/RecentVolunteers</members>
+        <members>VolunteerReports/InactiveVolunteers</members>
+        <members>VolunteerReports/TopVolunteersByLifetimeHours</members>
+        <members>VolunteerReports/UpcomingShiftsWithVolunteers</members>
+        <members>VolunteerReports/TotalVolunteerHoursByMonth</members>
+        <members>VolunteerReports/VolunteerHoursByVolunteerActivity</members>
+        <members>VolunteerReports/VolunteersThisYear</members>
+        <members>VolunteerReports/VolunteersLastMonth</members>
+        <members>VolunteerReports/VolunteersByActivity</members>
+        <members>VolunteerReports/VolunteersByPosition</members>
+        <members>VolunteerReports/TopVolunteersByRecentHours</members>
+        <members>VolunteerReports/ActiveVolunteers</members>
+        <members>VolunteerReports/AvailableVolunteerActivities</members>
+        <members>VolunteerReports/VolunteersWithPositionAssignments</members>
+        <name>Report</name>
+    </types>
     <version>58.0</version>
 </Package>
