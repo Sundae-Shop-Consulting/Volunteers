@@ -1,5 +1,7 @@
 import { LightningElement, api } from 'lwc';
-import getAssignedVolunteerIds from '@salesforce/apex/VolunteerAssignmentService.getAssignedVolunteerIds';
+import { CloseActionScreenEvent } from 'lightning/actions';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import getAssignedVolunteerIds from '@salesforce/apex/EmailVolunteersController.getAssignedVolunteerIds';
 
 export default class SendVolunteerEmailsAction extends LightningElement {
     _recordId;
@@ -28,9 +30,27 @@ export default class SendVolunteerEmailsAction extends LightningElement {
             .then((assignedVolunteerIds) => {
                 if (Array.isArray(assignedVolunteerIds) && assignedVolunteerIds.length > 0) {
                     this.assignedVolunteerIds = assignedVolunteerIds;
+                } else {
+                    this.dispatchEvent(new CloseActionScreenEvent());
+                    this.dispatchEvent(new ShowToastEvent({
+                        title: 'Email Volunteers',
+                        message: 'No volunteers assigned.',
+                    }));
                 }
-                // @todo handle not array or empty array
+            }).catch((error) => {
+                let messages = ['An error occurred.'];
+
+                if (error?.body?.message) {
+                    messages.push(error.body.message);
+                }
+
+                this.dispatchEvent(new CloseActionScreenEvent());
+
+                this.dispatchEvent(new ShowToastEvent({
+                    title: 'Email Volunteers Error',
+                    message: messages.join('  '),
+                    variant: "error"
+                }));
             });
-            // @todo handle promise errors
     }
 }

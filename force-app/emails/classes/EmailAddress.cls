@@ -19,7 +19,8 @@ public class EmailAddress {
 
     /**
      * The actual email address, which is presumably a properly addr-spec
-     * formatted email address.
+     * formatted email address.  This class does no validation of email
+     * addresses (even "allowing" empty and null values to be used).
      */
     public String address;
 
@@ -47,25 +48,39 @@ public class EmailAddress {
 
     /**
      * Construct an EmailAddress from a User, Lead, or Contact record, from
-     * which the 'Id', 'Name', and 'Email' fields will be used.
+     * which the `Id`, `Name`, and `Email` fields will be used.
      */
     public EmailAddress(SObject record) {
-        this(
-            (Id) record.get('Id'),
-            (String) record.get('Name'),
-            (String) record.get('Email')
-        );
+        id = (Id) record.get('Id');
+        displayName = (String) record.get('Name');
+
+        try {
+            address = (String) record.get('Email');
+        } catch (SObjectException e) {
+            // Email field is not on the object, which *probably* means it was
+            // removed from the object because the user doesn't have access to
+            // that field.  This is ok-- address remains null in this case, and
+            // it can be handled by consumers of this instance.
+        }
     }
 
     /**
      * Return a string formatted as an individual mailbox address, which
-     * includes the display name and the email address in brackets.
+     * includes the display name and the email address in brackets.  For
+     * example: "Ava Smith <asmith@example.com>"
      */
     public String getNameAndAddress() {
-        return String.format(
-            '{0} <{1}>',
-            new List<String>{displayName, address}
-        );
+        List<String> parts = new List<String>();
+
+        if (!String.isBlank(displayName)) {
+            parts.add(displayName);
+        }
+
+        if (!String.isBlank(address)) {
+            parts.add('<' + address + '>');
+        }
+
+        return String.join(parts, ' ');
     }
 
     /**

@@ -1,0 +1,23 @@
+<template>
+    <lightning-quick-action-panel header="Email Delivery Report">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">
+            The following emails could not be sent.
+        </h3>
+
+        <lightning-datatable
+            data={errors}
+            columns={columns}
+            lwc:if={hasErrors}
+            key-field="id"
+            hide-checkbox-column>
+        </lightning-datatable>
+
+        <div slot="footer">
+            <lightning-button
+                variant="brand"
+                label="Close"
+                onclick={handleClose}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

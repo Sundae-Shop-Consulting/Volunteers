@@ -5,3 +5,7 @@
 .recipient-pill-container {
     flex-wrap: wrap;
 }
+
+.slds-form-element.has-warning .slds-form-element__help {
+    color: rgb(140, 75, 2);
+}

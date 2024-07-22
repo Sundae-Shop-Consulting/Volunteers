@@ -9,55 +9,84 @@
             onchange={handleFromChange}>
         </lightning-select>
 
-        <div class="slds-form-element slds-form-element__readonly" lwc:if={hasRecipients}>
+        <div class={recipientsFormElementClass}>
             <span class="slds-form-element__label">
+                <abbr class="slds-required" title="required">*</abbr>
                 To
             </span>
             <div class="slds-form-element__control">
                 <div class="slds-form-element__static">
-                    <div class="slds-pill_container recipient-pill-container">
-                        <template lwc:if={hasTooManyRecipients}>
-                            <span class="slds-pill recipient-pill">
-                                <span class="slds-pill__icon_container">
-                                    <lightning-icon
-                                        icon-name="standard:list_email"
-                                        size="small">
-                                    </lightning-icon>
+                    <div class={recipientsPillContainerClass}>
+                        <template lwc:if={hasRecipients}>
+                            <template lwc:if={hasTooManyRecipients}>
+                                <span class="slds-pill recipient-pill">
+                                    <span class="slds-pill__icon_container">
+                                        <lightning-icon
+                                            icon-name="standard:list_email"
+                                            size="small">
+                                        </lightning-icon>
+                                    </span>
+                                    <span class="slds-pill__label">
+                                        {tooManyRecipientsLabel}
+                                    </span>
                                 </span>
-                                <span class="slds-pill__label">{tooManyRecipientsLabel}</span>
-                            </span>
-                        </template>
-                        <template for:each={recipientPills} for:item="recipient" lwc:else>
-                            <span class="slds-pill recipient-pill" key={recipient.id}>
-                                <span class="slds-pill__icon_container">
-                                    <lightning-icon
-                                        icon-name={recipient.iconName}
-                                        size="small">
-                                    </lightning-icon>
+                            </template>
+                            <template
+                                for:each={recipientPills}
+                                for:item="recipient"
+                                lwc:else>
+                                <span
+                                    class="slds-pill recipient-pill"
+                                    key={recipient.id}>
+                                    <span class="slds-pill__icon_container">
+                                        <lightning-icon
+                                            icon-name={recipient.iconName}
+                                            size="small">
+                                        </lightning-icon>
+                                    </span>
+                                    <span class="slds-pill__label">
+                                        {recipient.displayName}
+                                    </span>
                                 </span>
-                                <span class="slds-pill__label">{recipient.displayName}</span>
-                            </span>
+                            </template>
                         </template>
                     </div>
                 </div>
             </div>
-            <button class="slds-button" onclick={showRecipientsModal}>View recipient details</button>
+            <div
+                class="slds-form-element__help"
+                lwc:if={recipientsHelpMessage}>
+                    {recipientsHelpMessage}
+            </div>
+            <button
+                class="slds-button"
+                onclick={showRecipientsModal}
+                lwc:if={hasRecipients}>
+                    View recipient details
+            </button>
         </div>
 
         <lightning-input
             type="text"
             label="Subject"
+            data-id="subject"
             onchange={handleSubjectChange}
-            placeholder="Enter subject...">
+            placeholder="Enter subject..."
+            required>
         </lightning-input>
 
         <lightning-input-rich-text
             formats={richTextAllowedFormats}
-            onchange={handleMessageChange}
+            onchange={handleBodyChange}
+            onblur={handleBodyBlur}
             label="Message"
-            label-visible>
+            valid={isBodyVisiblyValid}
+            message-when-bad-input={bodyErrorMessage}
+            label-visible
+            required>
         </lightning-input-rich-text>
 
+        <!-- @todo
         <lightning-button-group class="slds-m-top_xx-small">
             <lightning-button-icon
                 icon-name="utility:insert_template"
@@ -66,15 +95,21 @@
                 size="small">
             </lightning-button-icon>
         </lightning-button-group>
+        -->
 
-        <div class="slds-form-element slds-form-element__readonly" lwc:if={hasRelatedToName}>
+        <div
+            class="slds-form-element slds-form-element__readonly"
+            lwc:if={hasRelatedToName}>
             <span class="slds-form-element__label">
                 Related To
             </span>
             <div class="slds-form-element__control">
                 <div class="slds-form-element__static">
                     <span class="slds-pill related-to-pill">
-                        <span class="slds-pill__icon_container" style={relatedTo.colorStyle}>
+                        <span
+                            class="slds-pill__icon_container"
+                            style={relatedToIconStyle}
+                            lwc:if={hasRelatedToIcon}>
                             <span class="slds-icon_container">
                                 <img src={relatedTo.iconUrl}>
                             </span>
@@ -89,6 +124,7 @@
             <lightning-button
                 variant="brand"
                 label="Send"
+                disabled={isSendDisabled}
                 onclick={handleClickSend}>
             </lightning-button>
         </div>

@@ -2,25 +2,16 @@ public with sharing class EmailController {
     /**
      * Get recipient information (i.e. recipient type, name, email address) for
      * the given list of targetObjectIds.
-     *
-     * @throws ControllerException if any of the ids do not correspond to a
-     * supported type or if information about the recipient can not be
-     * retrieved (possibly due to security configuration).
      */
     @AuraEnabled(cacheable=true)
     public static List<EmailRecipient> getRecipientsById(List<Id> targetObjectIds) {
         EmailRecipientService service = new EmailRecipientService();
 
+        List<EmailAddress> emailAddresses = service.getRecipientsById(
+            targetObjectIds
+        );
+
         List<EmailRecipient> recipients = new List<EmailRecipient>();
-
-        List<EmailAddress> emailAddresses;
-
-        try {
-            emailAddresses = service.getRecipientsById(targetObjectIds);
-        } catch (EmailRecipientService.ServiceException e) {
-            // @todo Rewrite error message here before returning to front-end?
-            throw new ControllerException(e);
-        }
 
         for (EmailAddress emailAddress : emailAddresses) {
             recipients.add(new EmailRecipient(emailAddress));
@@ -81,11 +72,9 @@ public with sharing class EmailController {
          */
         @AuraEnabled
         public String getSObjectType() {
-            // @todo what if getSObjectType() returns null when no related
-            // object is specified?
             return emailAddress
                 .getSObjectType()
-                .getDescribe()
+                ?.getDescribe()
                 .getName();
         }
     }
@@ -94,13 +83,64 @@ public with sharing class EmailController {
      * Send an email.
      */
     @AuraEnabled
-    public static void sendEmail(EmailRequest emailRequest) {
-        // @todo validation, permissions
-
+    public static EmailResults sendEmail(EmailRequest emailRequest) {
         EmailService service = new EmailService();
 
-        // @todo handle exceptions, return result object
-        service.sendEmail(emailRequest.getAsEmail());
+        // @todo handle exceptions
+        return new EmailResults(service.sendEmail(emailRequest.getAsEmail()));
+    }
+
+    public class EmailResults {
+        private List<Messaging.SendEmailResult> sendEmailResults;
+
+        public EmailResults(List<Messaging.SendEmailResult> sendEmailResults) {
+            this.sendEmailResults = sendEmailResults;
+        }
+
+        @AuraEnabled
+        public Map<Id, String> getErrors() {
+            Map<Id, List<String>> errors = new Map<Id, List<String>>();
+
+            for (Messaging.SendEmailResult result : sendEmailResults) {
+                for (Messaging.SendEmailError error : result.getErrors()) {
+                    Id targetObjectId = error.getTargetObjectId();
+                    if (!errors.containsKey(targetObjectId)) {
+                        errors.put(targetObjectId, new List<String>());
+                    }
+                    errors.get(targetObjectId).add(
+                        getPublicErrorMessage(error.getStatusCode())
+                    );
+                }
+            }
+
+            Map<Id, String> flatErrors = new Map<Id, String>();
+
+            for (Id targetObjectId : errors.keySet()) {
+                flatErrors.put(
+                    targetObjectId,
+                    String.join(errors.get(targetObjectId), ' ')
+                );
+            }
+
+            return flatErrors;
+        }
+
+        private String getPublicErrorMessage(System.StatusCode statusCode) {
+            switch on statusCode {
+                when INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY {
+                    return 'Invalid recipient or related record';
+                }
+                when INVALID_EMAIL_ADDRESS {
+                    return 'Invalid email address';
+                }
+                when INSUFFICIENT_ACCESS_OR_READONLY {
+                    return 'Insufficient access';
+                }
+                when else {
+                    return 'Unable to send email';
+                }
+            }
+        }
     }
 
     /**
