@@ -9,7 +9,7 @@
             <axisBinding>y</axisBinding>
             <column>VolunteerHoursLog__c.Hours__c</column>
         </chartSummaries>
-        <chartType>VerticalColumn</chartType>
+        <chartType>HorizontalBar</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>VolunteerHoursLog__c.VolunteerContact__c</groupingColumn>
@@ -51,9 +51,12 @@
     </filter>
     <format>Summary</format>
     <groupingsDown>
+        <aggregateType>Sum</aggregateType>
         <dateGranularity>Day</dateGranularity>
         <field>VolunteerHoursLog__c.VolunteerContact__c</field>
-        <sortOrder>Asc</sortOrder>
+        <sortByName>VolunteerHoursLog__c.Hours__c</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
     </groupingsDown>
     <name>Top Volunteers by Recent Hours</name>
     <params>
