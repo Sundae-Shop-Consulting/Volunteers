@@ -81,6 +81,7 @@ Insert VolunteerActivity__c:
   - MaximumVolunteersAllowed__c
   - MinimumVolunteersNeeded__c
   - Name
+  - Status__c
   - VolunteerHours__c
   - VolunteersAssigned__c
   lookups:
@@ -95,6 +96,8 @@ Insert VolunteerActivity__c:
       - VolunteerPosition__c
 Insert VolunteerPositionAssignment__c:
   sf_object: VolunteerPositionAssignment__c
+  fields:
+  - Status__c
   lookups:
     VolunteerContact__c:
       table:
@@ -104,6 +107,8 @@ Insert VolunteerPositionAssignment__c:
       - VolunteerPosition__c
 Insert VolunteerActivityAssignment__c:
   sf_object: VolunteerActivityAssignment__c
+  fields:
+  - Status__c
   lookups:
     VolunteerActivity__c:
       table:
@@ -146,6 +151,8 @@ Insert VolunteerShift__c:
       - VolunteerActivity__c
 Insert VolunteerShiftAssignment__c:
   sf_object: VolunteerShiftAssignment__c
+  fields:
+  - Status__c
   lookups:
     VolunteerContact__c:
       table:
