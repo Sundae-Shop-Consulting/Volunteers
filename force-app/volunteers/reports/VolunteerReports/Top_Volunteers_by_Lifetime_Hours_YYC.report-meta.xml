@@ -7,12 +7,6 @@
         <field>LAST_NAME</field>
     </columns>
     <columns>
-        <field>EMAIL</field>
-    </columns>
-    <columns>
-        <field>PHONE1</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Contact.VolunteerHours__c</field>
     </columns>
