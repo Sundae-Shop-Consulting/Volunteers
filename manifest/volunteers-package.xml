@@ -144,8 +144,8 @@
         <members>VolunteerReports/UpcomingShiftsWithVolunteers</members>
         <members>VolunteerReports/TotalVolunteerHoursByMonth</members>
         <members>VolunteerReports/VolunteerHoursByVolunteerActivity</members>
-        <members>VolunteerReports/VolunteersThisYear</members>
-        <members>VolunteerReports/VolunteersLastMonth</members>
+        <members>VolunteerReports/AllVolunteersThisYear</members>
+        <members>VolunteerReports/AllVolunteersLastMonth</members>
         <members>VolunteerReports/VolunteersByActivity</members>
         <members>VolunteerReports/VolunteersByPosition</members>
         <members>VolunteerReports/TopVolunteersByRecentHours</members>

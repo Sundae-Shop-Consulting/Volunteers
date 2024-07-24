@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>VolunteerHoursLog__c.VolunteerActivity__c</field>
+        <field>FK_NAME</field>
     </columns>
     <columns>
-        <field>CUST_NAME</field>
+        <field>VolunteerHoursLog__c.StartDateTime__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>VolunteerHoursLog__c.Hours__c</field>
     </columns>
-    <description>List of all volunteers with their hours logged in the current calendar year.</description>
+    <description>Volunteers who logged hours this year.</description>
     <filter>
         <criteriaItems>
             <column>VolunteerHoursLog__c.StartDateTime__c</column>
@@ -24,24 +24,19 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>FK_CNTC_FIRST_NAME</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>FK_NAME</field>
+        <field>VolunteerHoursLog__c.VolunteerContact__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Volunteers This Year</name>
     <params>
         <name>co</name>
-        <value>0</value>
+        <value>1</value>
     </params>
-    <reportType>CustomEntity$VolunteerHoursLog__c@VolunteerHoursLog__c.VolunteerContact__c</reportType>
+    <reportType>CustomEntity$VolunteerHoursLog__c@VolunteerHoursLog__c.VolunteerActivity__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>VolunteerHoursLog__c.EndDate__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

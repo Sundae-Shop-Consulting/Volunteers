@@ -13,6 +13,16 @@
         <field>VolunteerShiftAssignment__c.Status__c</field>
     </columns>
     <description>All upcoming Volunteer Shifts with assigned Volunteers. Can be used as a check-in sheet.</description>
+    <filter>
+        <criteriaItems>
+            <column>VolunteerShiftAssignment__c.ShiftStartDateTime__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>TODAY</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>

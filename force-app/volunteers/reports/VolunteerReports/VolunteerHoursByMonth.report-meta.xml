@@ -14,7 +14,7 @@
         <expandOthers>true</expandOthers>
         <groupingColumn>VolunteerHoursLog__c.StartDateTime__c</groupingColumn>
         <location>CHART_BOTTOM</location>
-        <showAxisLabels>true</showAxisLabels>
+        <showAxisLabels>false</showAxisLabels>
         <showPercentage>false</showPercentage>
         <showTotal>false</showTotal>
         <showValues>false</showValues>
@@ -26,16 +26,13 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>VolunteerHoursLog__c.VolunteerActivity__c</field>
-    </columns>
-    <columns>
-        <field>VolunteerHoursLog__c.EndDateTime__c</field>
+        <field>FK_NAME</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>VolunteerHoursLog__c.Hours__c</field>
     </columns>
-    <description>Matrix report of total hours for each volunteer by month.</description>
+    <description>Matrix report that includes the sum of hours volunteered by month for each volunteer.</description>
     <format>Matrix</format>
     <groupingsAcross>
         <dateGranularity>Month</dateGranularity>
@@ -44,24 +41,19 @@
     </groupingsAcross>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>FK_CNTC_FIRST_NAME</field>
+        <field>VolunteerHoursLog__c.VolunteerContact__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>FK_NAME</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <name>Volunteer Hours by Month</name>
+    <name>Volunteer Hours By Month</name>
     <params>
         <name>co</name>
         <value>0</value>
     </params>
-    <reportType>CustomEntity$VolunteerHoursLog__c@VolunteerHoursLog__c.VolunteerContact__c</reportType>
+    <reportType>CustomEntity$VolunteerHoursLog__c@VolunteerHoursLog__c.VolunteerActivity__c</reportType>
     <scope>user</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>VolunteerHoursLog__c.EndDate__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
