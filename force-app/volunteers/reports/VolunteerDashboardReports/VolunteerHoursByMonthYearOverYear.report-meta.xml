@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>VolunteerHoursLog__c.Hours__c</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>CASE(
+    MONTH(DATEVALUE(VolunteerHoursLog__c.StartDateTime__c)),
+    1,&quot;01 - January&quot;,
+    2,&quot;02- February&quot;,
+    3,&quot;03 - March&quot;,
+    4,&quot;04- April&quot;,
+    5,&quot;05 - May&quot;,
+    6,&quot;06 - June&quot;,
+    7,&quot;07 - July&quot;,
+    8,&quot;08 - August&quot;,
+    9,&quot;09 - September&quot;,
+    10,&quot;10 - October&quot;,
+    11,&quot;11 - November&quot;,
+    12,&quot;12 - December&quot;,
+    &quot;&quot;
+)</calculatedFormula>
+        <dataType>Text</dataType>
+        <developerName>CDF1</developerName>
+        <label>Month</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <description>Compare volunteer hours by month between this year and last year.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Year</dateGranularity>
+        <field>VolunteerHoursLog__c.StartDateTime__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CDF1</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Volunteer Hours By Month Year Over Year</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$VolunteerHoursLog__c@VolunteerHoursLog__c.VolunteerActivity__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>VolunteerHoursLog__c.EndDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
