@@ -5,13 +5,6 @@ CREATE TABLE "Account" (
 	"ParentId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES('Account-1','Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES('Account-2','Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES('Account-3','Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES('Account-4','Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES('Account-5','Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES('Account-6','Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES('Account-7','Sample Account for Entitlements','');
 INSERT INTO "Account" VALUES('Account-8','Doe Household','');
 INSERT INTO "Account" VALUES('Account-9','Harris Household','');
 INSERT INTO "Account" VALUES('Account-10','Young Household','');

@@ -27,7 +27,7 @@
         <field>VolunteerHoursLog__c.VolunteerContact__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Volunteers This Year</name>
+    <name>All Volunteers This Year</name>
     <params>
         <name>co</name>
         <value>1</value>

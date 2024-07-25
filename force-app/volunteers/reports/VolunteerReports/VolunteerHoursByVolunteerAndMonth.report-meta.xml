@@ -44,13 +44,13 @@
         <field>VolunteerHoursLog__c.VolunteerContact__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Volunteer Hours By Month</name>
+    <name>Volunteer Hours By Volunteer And Month</name>
     <params>
         <name>co</name>
         <value>0</value>
     </params>
     <reportType>CustomEntity$VolunteerHoursLog__c@VolunteerHoursLog__c.VolunteerActivity__c</reportType>
-    <scope>user</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
