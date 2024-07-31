@@ -47,16 +47,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Location__c</field>
-            <table>VolunteerPosition__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LocationAddress__c</field>
-            <table>VolunteerPosition__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>MinimumAge__c</field>
             <table>VolunteerPosition__c</table>
         </columns>

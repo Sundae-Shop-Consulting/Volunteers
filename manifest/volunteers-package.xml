@@ -47,7 +47,6 @@
         <members>VolunteerPosition__c.RequiredTraining__c</members>
         <members>VolunteerPosition__c.Status__c</members>
         <members>VolunteerPosition__c.TimeCommitment__c</members>
-        <members>VolunteerPosition__c.LocationAddress__c</members>
         <members>VolunteerShift__c.Description__c</members>
         <members>VolunteerShift__c.DurationHours__c</members>
         <members>VolunteerShift__c.Location__c</members>
