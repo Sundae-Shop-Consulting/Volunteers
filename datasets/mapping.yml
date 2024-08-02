@@ -71,10 +71,6 @@ Insert VolunteerPosition__c:
   - VolunteerActivities__c
   - VolunteerHours__c
   - VolunteersAssigned__c
-  lookups:
-    Location__c:
-      table:
-      - Location
 Insert VolunteerActivity__c:
   sf_object: VolunteerActivity__c
   fields:
