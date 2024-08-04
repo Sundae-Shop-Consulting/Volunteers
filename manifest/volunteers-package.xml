@@ -107,6 +107,7 @@
         <members>Volunteer_Position_Record_Page</members>
         <members>Volunteer_Shift_Record_Page</members>
         <members>Volunteers_UtilityBar</members>
+        <members>Volunteer_Home_Page
         <name>FlexiPage</name>
     </types>
     <types>
@@ -128,6 +129,7 @@
         <members>VolunteerHoursLog__c.All</members>
         <members>VolunteerPosition__c.All</members>
         <members>VolunteerShift__c.All</members>
+        <members>VolunteerPositionAssignment__c.Open_Applications</members>
         <name>ListView</name>
     </types>
     <types>
