@@ -14,23 +14,29 @@ project:
 
 
 flows:
-    dev_org:
+    config_with_data:
         steps:
-            10:
+            1:
                 task: deploy_dlrs 
-            11:
+            2:
                 task: assign_permission_sets
                 options:
                     api_names:
                         - VolunteerManager 
-            12:
+            3:
                 task: load_dataset
                 options:
                     mapping: datasets/mapping.yml
                     sql_path: datasets/sample-animalshelter.sql
                     drop_missing_schema: True
-            13:
+            4:
                 task: reorder_app_menu
+
+    dev_org:
+        steps:
+            10: 
+                flow: config_with_data
+            
 
     make_community:
         steps:

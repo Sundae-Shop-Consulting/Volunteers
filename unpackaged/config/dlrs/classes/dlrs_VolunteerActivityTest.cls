@@ -8,6 +8,6 @@ private class dlrs_VolunteerActivityTest
     private static void testTrigger()
     {
         // Force the dlrs_VolunteerActivityTrigger to be invoked, fails the test if org config or other Apex code prevents this.
-        dlrs.RollupService.testHandler(new VolunteerActivity__c());
+        dlrs.RollupService.testHandler(new %%%NAMESPACE%%%VolunteerActivity__c());
     }
 }
