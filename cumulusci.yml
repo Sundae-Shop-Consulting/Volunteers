@@ -36,6 +36,11 @@ flows:
         steps:
             10: 
                 flow: config_with_data
+
+    install_beta:
+        steps:
+            10:
+                flow: config_with_data
             
 
     make_community:
