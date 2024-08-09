@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>dlrs__AggregateResultField__c</field>
-        <value xsi:type="xsd:string">VolunteerHours__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%VolunteerHours__c</value>
     </values>
     <values>
         <field>dlrs__CalculationMode__c</field>
@@ -28,7 +28,7 @@
     </values>
     <values>
         <field>dlrs__ChildObject__c</field>
-        <value xsi:type="xsd:string">VolunteerHoursLog__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%VolunteerHoursLog__c</value>
     </values>
     <values>
         <field>dlrs__ConcatenateDelimiter__c</field>
@@ -40,11 +40,11 @@
     </values>
     <values>
         <field>dlrs__FieldToAggregate__c</field>
-        <value xsi:type="xsd:string">Hours__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%Hours__c</value>
     </values>
     <values>
         <field>dlrs__FieldToOrderBy__c</field>
-        <value xsi:type="xsd:string">StartDate__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%StartDate__c</value>
     </values>
     <values>
         <field>dlrs__ParentObject__c</field>
@@ -60,7 +60,7 @@
     </values>
     <values>
         <field>dlrs__RelationshipField__c</field>
-        <value xsi:type="xsd:string">VolunteerContact__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%VolunteerContact__c</value>
     </values>
     <values>
         <field>dlrs__RowLimit__c</field>
