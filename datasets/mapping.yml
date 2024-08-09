@@ -36,6 +36,7 @@ Insert VolunteerEvent__c:
   fields:
   - Description__c
   - Name
+  anchor_date: 2024-07-23
 Insert Contact:
   sf_object: Contact
   fields:
@@ -55,6 +56,7 @@ Insert Contact:
       table:
       - Contact
       after: Insert Contact
+  anchor_date: 2024-07-23
 Insert VolunteerPosition__c:
   sf_object: VolunteerPosition__c
   fields:
@@ -69,10 +71,6 @@ Insert VolunteerPosition__c:
   - VolunteerActivities__c
   - VolunteerHours__c
   - VolunteersAssigned__c
-  lookups:
-    Location__c:
-      table:
-      - Location
 Insert VolunteerActivity__c:
   sf_object: VolunteerActivity__c
   fields:
@@ -81,6 +79,7 @@ Insert VolunteerActivity__c:
   - MaximumVolunteersAllowed__c
   - MinimumVolunteersNeeded__c
   - Name
+  - Status__c
   - VolunteerHours__c
   - VolunteersAssigned__c
   lookups:
@@ -95,10 +94,9 @@ Insert VolunteerActivity__c:
       - VolunteerPosition__c
 Insert VolunteerPositionAssignment__c:
   sf_object: VolunteerPositionAssignment__c
+  fields:
+  - Status__c
   lookups:
-    VolunteerAccount__c:
-      table:
-      - Account
     VolunteerContact__c:
       table:
       - Contact
@@ -107,10 +105,9 @@ Insert VolunteerPositionAssignment__c:
       - VolunteerPosition__c
 Insert VolunteerActivityAssignment__c:
   sf_object: VolunteerActivityAssignment__c
+  fields:
+  - Status__c
   lookups:
-    VolunteerAccount__c:
-      table:
-      - Account
     VolunteerActivity__c:
       table:
       - VolunteerActivity__c
@@ -134,6 +131,7 @@ Insert VolunteerHoursLog__c:
     VolunteerContact__c:
       table:
       - Contact
+  anchor_date: 2024-07-23
 Insert VolunteerShift__c:
   sf_object: VolunteerShift__c
   fields:
@@ -150,12 +148,12 @@ Insert VolunteerShift__c:
     VolunteerActivity__c:
       table:
       - VolunteerActivity__c
+  anchor_date: 2024-07-23
 Insert VolunteerShiftAssignment__c:
   sf_object: VolunteerShiftAssignment__c
+  fields:
+  - Status__c
   lookups:
-    VolunteerAccount__c:
-      table:
-      - Account
     VolunteerContact__c:
       table:
       - Contact

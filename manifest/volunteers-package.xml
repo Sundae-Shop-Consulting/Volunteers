@@ -9,8 +9,12 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>Contact.FirstVolunteerDate__c</members>
+        <members>Contact.LastVolunteerDate__c</members>
+        <members>Contact.VolunteerHours__c</members>
+        <members>VolunteerActivityAssignment__c.Active__c</members>
+        <members>VolunteerActivityAssignment__c.Completed__c</members>
         <members>VolunteerActivityAssignment__c.VolunteerContact__c</members>
-        <members>VolunteerActivityAssignment__c.VolunteerAccount__c</members>
         <members>VolunteerActivityAssignment__c.VolunteerActivity__c</members>
         <members>VolunteerActivity__c.Description__c</members>
         <members>VolunteerActivity__c.VolunteerEvent__c</members>
@@ -29,10 +33,11 @@
         <members>VolunteerHoursLog__c.PlannedStartDateTime__c</members>
         <members>VolunteerHoursLog__c.StartDateTime__c</members>
         <members>VolunteerHoursLog__c.StartDate__c</members>
-        <members>VolunteerHoursLog__c.VolunteerContact__c</members>
         <members>VolunteerHoursLog__c.VolunteerActivity__c</members>
+        <members>VolunteerHoursLog__c.VolunteerContact__c</members>
+        <members>VolunteerPositionAssignment__c.Active__c</members>
+        <members>VolunteerPositionAssignment__c.Completed__c</members>
         <members>VolunteerPositionAssignment__c.VolunteerContact__c</members>
-        <members>VolunteerPositionAssignment__c.VolunteerAccount__c</members>
         <members>VolunteerPositionAssignment__c.VolunteerPosition__c</members>
         <members>VolunteerPosition__c.Description__c</members>
         <members>VolunteerPosition__c.Duties__c</members>
@@ -42,7 +47,6 @@
         <members>VolunteerPosition__c.RequiredTraining__c</members>
         <members>VolunteerPosition__c.Status__c</members>
         <members>VolunteerPosition__c.TimeCommitment__c</members>
-        <members>VolunteerPosition__c.LocationAddress__c</members>
         <members>VolunteerShift__c.Description__c</members>
         <members>VolunteerShift__c.DurationHours__c</members>
         <members>VolunteerShift__c.Location__c</members>
@@ -53,10 +57,22 @@
         <members>VolunteerShift__c.VolunteersAssigned__c</members>
         <members>VolunteerShift__c.VolunteerOpeningsAvailable__c</members>
         <members>VolunteerShift__c.VolunteersStillNeeded__c</members>
+        <members>VolunteerShiftAssignment__c.Active__c</members>
+        <members>VolunteerShiftAssignment__c.Completed__c</members>
         <members>VolunteerShiftAssignment__c.VolunteerContact__c</members>
-        <members>VolunteerShiftAssignment__c.VolunteerAccount__c</members>
         <members>VolunteerShiftAssignment__c.VolunteerShift__c</members>
         <name>CustomField</name>
+    </types>
+    <types>
+        <members>ActivityAssignmentActiveStatuses</members>
+        <members>ActivityAssignmentCompletedStatuses</members>
+        <members>PositionAssignmentActiveStatuses</members>
+        <members>PositionAssignmentCompletedStatuses</members>
+        <members>ShiftAssignmentActiveStatuses</members>
+        <members>ShiftAssignmentCompletedStatuses</members>
+        <members>VolunteerActivityActiveStatuses</members>
+        <members>VolunteerActivityCompletedStatuses</members>
+        <name>CustomMetadata</name>
     </types>
     <types>
         <members>Address</members>
@@ -116,6 +132,26 @@
     <types>
         <members>VolunteerManager</members>
         <name>PermissionSet</name>
+    </types>
+    <types>
+    	<members>VolunteerReports/UpcomingShiftsNeedingVolunteers</members>
+        <members>VolunteerReports/ActivitiesWithVolunteersNeeded</members>
+        <members>VolunteerReports/AvailableVolunteerShifts</members>
+        <members>VolunteerReports/RecentVolunteers</members>
+        <members>VolunteerReports/InactiveVolunteers</members>
+        <members>VolunteerReports/TopVolunteersByLifetimeHours</members>
+        <members>VolunteerReports/UpcomingShiftsWithVolunteers</members>
+        <members>VolunteerReports/TotalVolunteerHoursByMonth</members>
+        <members>VolunteerReports/VolunteerHoursByVolunteerActivity</members>
+        <members>VolunteerReports/AllVolunteersThisYear</members>
+        <members>VolunteerReports/AllVolunteersLastMonth</members>
+        <members>VolunteerReports/VolunteersByActivity</members>
+        <members>VolunteerReports/VolunteersByPosition</members>
+        <members>VolunteerReports/TopVolunteersByRecentHours</members>
+        <members>VolunteerReports/ActiveVolunteers</members>
+        <members>VolunteerReports/AvailableVolunteerActivities</members>
+        <members>VolunteerReports/VolunteersWithPositionAssignments</members>
+        <name>Report</name>
     </types>
     <version>58.0</version>
 </Package>

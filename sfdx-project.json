@@ -1,10 +1,10 @@
 {
     "packageDirectories": [
         {
-            "path": "force-app",
+            "path": "force-app/volunteers",
             "default": true
         }
     ],
-    "namespace": "v4us",
+    "namespace": "v4ustest",
     "sourceApiVersion": "58.0"
 }
