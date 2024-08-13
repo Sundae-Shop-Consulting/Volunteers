@@ -8,6 +8,6 @@ private class dlrs_VolunteerHoursLogTest
     private static void testTrigger()
     {
         // Force the dlrs_VolunteerHoursLogTrigger to be invoked, fails the test if org config or other Apex code prevents this.
-        dlrs.RollupService.testHandler(new VolunteerHoursLog__c());
+        dlrs.RollupService.testHandler(new %%%NAMESPACE%%%VolunteerHoursLog__c());
     }
 }
