@@ -41,7 +41,6 @@
         <members>VolunteerPositionAssignment__c.VolunteerPosition__c</members>
         <members>VolunteerPosition__c.Description__c</members>
         <members>VolunteerPosition__c.Duties__c</members>
-        <members>VolunteerPosition__c.Location__c</members>
         <members>VolunteerPosition__c.MinimumAge__c</members>
         <members>VolunteerPosition__c.Qualifications__c</members>
         <members>VolunteerPosition__c.RequiredTraining__c</members>
@@ -106,6 +105,7 @@
         <members>Volunteer_Position_Record_Page</members>
         <members>Volunteer_Shift_Record_Page</members>
         <members>Volunteers_UtilityBar</members>
+        <members>Volunteer_Home_Page
         <name>FlexiPage</name>
     </types>
     <types>
@@ -127,6 +127,7 @@
         <members>VolunteerHoursLog__c.All</members>
         <members>VolunteerPosition__c.All</members>
         <members>VolunteerShift__c.All</members>
+        <members>VolunteerPositionAssignment__c.Open_Applications</members>
         <name>ListView</name>
     </types>
     <types>
