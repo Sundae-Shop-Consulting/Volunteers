@@ -418,16 +418,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>VolunteerPosition__c.Location__c</field>
-            <table>Contact.VolunteerPositionAssignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>VolunteerPosition__c.LocationAddress__c</field>
-            <table>Contact.VolunteerPositionAssignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>VolunteerPosition__c.MinimumAge__c</field>
             <table>Contact.VolunteerPositionAssignments__r</table>
         </columns>
