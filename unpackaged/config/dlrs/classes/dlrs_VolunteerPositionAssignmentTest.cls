@@ -8,6 +8,6 @@ private class dlrs_VolunteerPositionAssignmentTest
     private static void testTrigger()
     {
         // Force the dlrs_VolunteerPositionAssignmentTrigger to be invoked, fails the test if org config or other Apex code prevents this.
-        dlrs.RollupService.testHandler(new VolunteerPositionAssignment__c());
+        dlrs.RollupService.testHandler(new %%%NAMESPACE%%%VolunteerPositionAssignment__c());
     }
 }

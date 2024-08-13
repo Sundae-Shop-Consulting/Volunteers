@@ -5,6 +5,6 @@
             "default": true
         }
     ],
-    "namespace": "v4us",
+    "namespace": "v4ustest",
     "sourceApiVersion": "58.0"
 }
