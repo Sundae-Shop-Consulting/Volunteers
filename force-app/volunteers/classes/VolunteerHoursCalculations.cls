@@ -34,21 +34,12 @@ public with sharing class VolunteerHoursCalculations {
     private Integer countUpdatedRelevantFields(VolunteerHoursLog__c oldLog, VolunteerHoursLog__c newLog) {
         Integer countOfUpdatedFields = 0;
         if (oldLog.StartDateTime__c != newLog.StartDateTime__c) {
-            System.debug('oldLog.StartDateTime__c != newLog.StartDateTime__c: ' + (oldLog.StartDateTime__c != newLog.StartDateTime__c));
-            System.debug('oldLog.StartDateTime__c: ' + oldLog.StartDateTime__c);
-            System.debug('newLog.StartDateTime__c: ' + newLog.StartDateTime__c);
             countOfUpdatedFields++;
         }
         if (oldLog.EndDateTime__c != newLog.EndDateTime__c) {
-            System.debug('oldLog.EndDateTime__c != newLog.EndDateTime__c: ' + (oldLog.EndDateTime__c != newLog.EndDateTime__c));
-            System.debug('oldLog.EndDateTime__c: ' + oldLog.EndDateTime__c);
-            System.debug('newLog.EndDateTime__c: ' + newLog.EndDateTime__c);
             countOfUpdatedFields++;
         }
         if (oldLog.Hours__c != newLog.Hours__c) {
-            System.debug('oldLog.Hours__c != newLog.Hours__c: ' + (oldLog.Hours__c != newLog.Hours__c));
-            System.debug('oldLog.Hours__c: ' + oldLog.Hours__c);
-            System.debug('newLog.Hours__c: ' + newLog.Hours__c);
             countOfUpdatedFields++;
         }
         return countOfUpdatedFields;
@@ -74,7 +65,6 @@ public with sharing class VolunteerHoursCalculations {
     @TestVisible
     private Boolean isValidUpdate(VolunteerHoursLog__c oldLog, VolunteerHoursLog__c newLog) {
         Integer countOfUpdatedFields = countUpdatedRelevantFields(oldLog, newLog);
-        System.debug('countOfUpdatedFields: ' + countOfUpdatedFields);
         if (countOfUpdatedFields < 3) {
             return true;
         } else if (countPopulatedRelevantFields(newLog) == 3 && dateTimesAndHoursAddUp(newLog)) {
@@ -126,7 +116,6 @@ public with sharing class VolunteerHoursCalculations {
         log.StartDateTime__c = calculateStartDateTime(log.EndDateTime__c, log.Hours__c);
     }
 
-    
 
     private Boolean isStartDateTimeChanged(VolunteerHoursLog__c oldLog, VolunteerHoursLog__c newLog) {
         return oldLog.StartDateTime__c != newLog.StartDateTime__c;
