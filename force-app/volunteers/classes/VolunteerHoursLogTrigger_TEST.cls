@@ -102,4 +102,3 @@ private class VolunteerHoursLogTrigger_TEST {
         System.assertEquals(dateTimeSixMonthsAgo.addHours(2), log.EndDateTime__c, 'End Date/Time should have changed');
     }
 }
-}

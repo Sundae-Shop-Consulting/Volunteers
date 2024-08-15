@@ -18,8 +18,19 @@ private class VolunteerHoursCalculations_TEST {
         activityAssignment = queryActivityAssignment();
         return new VolunteerHoursLog__c(
             VolunteerContact__c = activityAssignment.VolunteerContact__c,
-            VolunteerActivity__c = activityAssignment.VolunteerActivity__c
+            VolunteerActivity__c = activityAssignment.VolunteerActivity__c,
+            StartDateTime__c = null,
+            EndDateTime__c = null,
+            Hours__c = null
         );
+    }
+
+    private static VolunteerHoursLog__c createBaseLogPopulated() {
+        VolunteerHoursLog__c log = createBaseLog();
+        log.StartDateTime__c = dateTimeSixMonthsAgo;
+        log.EndDateTime__c = dateTimeSixMonthsAgo.addHours(5);
+        log.Hours__c = 5;
+        return log;
     }
     
     @IsTest
@@ -90,4 +101,64 @@ private class VolunteerHoursCalculations_TEST {
         log.Hours__c = 5;
         System.assertEquals(dateTimeSixMonthsAgo.addHours(5), calculator.calculateEndDateTime(log.StartDateTime__c, log.Hours__c));
     }
+
+    @IsTest 
+    private static void testInvalidHoursLogUpdateMissingInfo() {
+        VolunteerHoursLog__c oldLog = createBaseLogPopulated();
+        VolunteerHoursLog__c newLog = createBaseLog();
+        System.assertEquals(false, calculator.isValidUpdate(oldLog, newLog));
+    }
+
+    @IsTest
+    private static void testInvalidHoursLogUpdateDataDoesntAddUp() {
+        VolunteerHoursLog__c oldLog = createBaseLog();
+        oldLog.Hours__c = 3;
+        oldLog.StartDateTime__c = dateTimeSixMonthsAgo.addHours(3);
+        oldLog.EndDateTime__c = dateTimeSixMonthsAgo.addHours(6);
+        // all values change
+        VolunteerHoursLog__c newLog = createBaseLog();
+        newLog.Hours__c = 5;
+        newLog.StartDateTime__c = dateTimeSixMonthsAgo;
+        newLog.EndDateTime__c = dateTimeSixMonthsAgo.addHours(7);
+        System.assertEquals(false, calculator.isValidUpdate(oldLog, newLog));
+    }
+
+    @IsTest
+    private static void testValidHoursLogUpdateDataAddsUp() {
+        VolunteerHoursLog__c oldLog = createBaseLog();
+        oldLog.Hours__c = 3;
+        oldLog.StartDateTime__c = dateTimeSixMonthsAgo.addHours(3);
+        oldLog.EndDateTime__c = dateTimeSixMonthsAgo.addHours(6);
+        // all values change
+        VolunteerHoursLog__c newLog = createBaseLog();
+        newLog.Hours__c = 5;
+        newLog.StartDateTime__c = dateTimeSixMonthsAgo;
+        newLog.EndDateTime__c = dateTimeSixMonthsAgo.addHours(5);
+        System.assert(calculator.isValidUpdate(oldLog, newLog));
+    }
+
+    @IsTest
+    private static void testValidHoursLogUpdateHoursChanged() {
+        VolunteerHoursLog__c oldLog = createBaseLogPopulated();
+        VolunteerHoursLog__c newLog = createBaseLogPopulated();
+        newLog.Hours__c = 7;
+        System.assert(calculator.isValidUpdate(oldLog, newLog));
+    }
+
+    @IsTest
+    private static void testValidHoursLogUpdateStartDateTimeChanged() {
+        VolunteerHoursLog__c oldLog = createBaseLogPopulated();
+        VolunteerHoursLog__c newLog = createBaseLogPopulated();
+        newLog.StartDateTime__c = dateTimeSixMonthsAgo.addHours(1);
+        System.assert(calculator.isValidUpdate(oldLog, newLog));
+    }
+
+    @IsTest
+    private static void testValidHoursLogUpdateEndDateTimeChanged() {
+        VolunteerHoursLog__c oldLog = createBaseLogPopulated();
+        VolunteerHoursLog__c newLog = createBaseLogPopulated();
+        newLog.EndDateTime__c = dateTimeSixMonthsAgo.addHours(9);
+        System.assert(calculator.isValidUpdate(oldLog, newLog));
+    }
+
 }
