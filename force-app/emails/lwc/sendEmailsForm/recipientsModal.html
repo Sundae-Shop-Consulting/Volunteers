@@ -1,0 +1,13 @@
+<template>
+    <lightning-modal-header
+        label={modalLabel.emailRecipientsLabel}>
+    </lightning-modal-header>
+    <lightning-modal-body>
+        <lightning-datatable
+            data={recipients}
+            columns={columns}
+            key-field="id"
+            hide-checkbox-column>
+        </lightning-datatable>
+    </lightning-modal-body>
+</template>

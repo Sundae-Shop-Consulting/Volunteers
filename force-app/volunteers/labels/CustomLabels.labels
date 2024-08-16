@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>emailVolunteersTitle</fullName>
+        <categories>Volunteers</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email volunteers toast title</shortDescription>
+        <value>Email Volunteers</value>
+    </labels>
+    <labels>
+        <fullName>errorNoVolunteers</fullName>
+        <categories>Volunteers,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error shown when no assigned volunteers</shortDescription>
+        <value>No volunteers assigned.</value>
+    </labels>
+    <labels>
+        <fullName>errorGeneric</fullName>
+        <categories>Volunteers,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Generic error message</shortDescription>
+        <value>An error occurred.</value>
+    </labels>
+    <labels>
+        <fullName>emailVolunteersErrorTitle</fullName>
+        <categories>Volunteers,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email volunteers toast error title</shortDescription>
+        <value>Email Volunteers Error</value>
+    </labels>
+</CustomLabels>
