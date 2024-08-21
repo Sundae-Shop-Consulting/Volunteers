@@ -41,7 +41,6 @@
         <members>VolunteerPositionAssignment__c.VolunteerPosition__c</members>
         <members>VolunteerPosition__c.Description__c</members>
         <members>VolunteerPosition__c.Duties__c</members>
-        <members>VolunteerPosition__c.Location__c</members>
         <members>VolunteerPosition__c.MinimumAge__c</members>
         <members>VolunteerPosition__c.Qualifications__c</members>
         <members>VolunteerPosition__c.RequiredTraining__c</members>
