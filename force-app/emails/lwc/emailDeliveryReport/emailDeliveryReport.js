@@ -15,6 +15,9 @@ export default class EmailDeliveryReport extends LightningElement {
     };
 
     @api
+    hasEmailFieldAccess = false;
+
+    @api
     recipients;
 
     @api
@@ -29,7 +32,7 @@ export default class EmailDeliveryReport extends LightningElement {
             }
         ];
 
-        if (this.recipients.some(r => Object.hasOwn(r, 'address'))) {
+        if (this.hasEmailFieldAccess) {
             columns.push(
                 {
                     label: emailEmailLabel,

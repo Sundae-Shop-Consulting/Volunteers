@@ -3,6 +3,7 @@
         oncloseaction={handleCloseAction}
         recipients={recipients}
         email-send-errors={emailSendErrors}
+        has-email-field-access={hasEmailFieldAccess}
         lwc:if={hasEmailSendErrors}>
     </c-email-delivery-report>
     <c-send-emails-form
@@ -11,6 +12,7 @@
         related-to={relatedTo}
         recipients={recipients}
         is-recipients-filtered={isRecipientsFiltered}
+        has-email-field-access={hasEmailFieldAccess}
         lwc:else>
     </c-send-emails-form>
 </template>

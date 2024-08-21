@@ -38,6 +38,9 @@ export default class SendEmailsForm extends LightningElement {
         emailRelatedToLabel,
     };
 
+    @api
+    hasEmailFieldAccess = false;
+
     // *** originator ***
 
     /**
@@ -170,10 +173,10 @@ export default class SendEmailsForm extends LightningElement {
      * cases where we don't know their email address because of FLS)?
      */
     get isRecipientsInvalidEmail() {
-        return this.hasRecipients && this.recipients.some(
+        return this.hasRecipients && this.hasEmailFieldAccess && this.recipients.some(
             recipient => 
-                Object.hasOwn(recipient, 'address')
-                && recipient.address == ''
+                !Object.hasOwn(recipient, 'address')
+                || recipient.address == ''
         );
     }
 
@@ -267,6 +270,7 @@ export default class SendEmailsForm extends LightningElement {
         RecipientsModal.open({
             size: 'small',
             recipients: this.recipients,
+            hasEmailFieldAccess: this.hasEmailFieldAccess,
         });
     }
 
@@ -484,6 +488,12 @@ class RecipientsModal extends LightningModal {
     recipients;
 
     /**
+     * Does the current user have read access to the Contact.Email field?
+     */
+    @api
+    hasEmailFieldAccess;
+
+    /**
      * Which columns should be displayed in the table in the modal?  This will
      * exclude the 'Email' column if the user is inferred to not have access to
      * that field.
@@ -497,7 +507,7 @@ class RecipientsModal extends LightningModal {
             },
         ];
 
-        if (this.recipients.some(r => Object.hasOwn(r, 'address'))) {
+        if (this.hasEmailFieldAccess) {
             columns.push(
                 {
                     label: emailEmailLabel,

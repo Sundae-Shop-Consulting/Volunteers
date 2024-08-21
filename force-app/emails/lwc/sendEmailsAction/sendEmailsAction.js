@@ -4,6 +4,8 @@ import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import { CloseActionScreenEvent } from 'lightning/actions';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
+import ContactEmailField from '@salesforce/schema/Contact.Email';
+
 import getFromAddressOptions from '@salesforce/apex/EmailController.getFromAddressOptions';
 import getRecipientsById from '@salesforce/apex/EmailController.getRecipientsById';
 import sendEmail from '@salesforce/apex/EmailController.sendEmail';
@@ -23,6 +25,25 @@ import emailSendError from '@salesforce/label/c.emailSendError';
 export default class SendEmailsAction extends LightningElement {
     label = {
     };
+
+    /**
+     * Does the current user have read access to the Contact.Email field?
+     */
+    hasEmailFieldAccess = false;
+
+    /**
+     * Get information about the Contact object and use it to determine whether
+     * the user has read access to the Contact.Email field.
+     */
+    @wire(getObjectInfo, { objectApiName: ContactEmailField.objectApiName })
+    wiredContactObjectInfo(result) {
+        if (result.data) {
+            this.hasEmailFieldAccess = Object.hasOwn(
+                result.data.fields,
+                ContactEmailField.fieldApiName
+            );
+        }
+    }
 
     /**
      * The id of the record the email should be related to.
