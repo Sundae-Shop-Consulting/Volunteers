@@ -96,6 +96,30 @@ public with sharing class EmailController {
         }
 
         @AuraEnabled
+        public Integer getSuccessCount() {
+            Integer successCount = 0;
+
+            for (Messaging.SendEmailResult result : sendEmailResults) {
+                if (result.isSuccess()) {
+                    successCount++;
+                }
+            }
+
+            return successCount;
+        }
+
+        @AuraEnabled
+        public Boolean getHasErrors() {
+            for (Messaging.SendEmailResult result : sendEmailResults) {
+                if (!result.isSuccess()) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        @AuraEnabled
         public Map<Id, String> getErrors() {
             Map<Id, List<String>> errors = new Map<Id, List<String>>();
 

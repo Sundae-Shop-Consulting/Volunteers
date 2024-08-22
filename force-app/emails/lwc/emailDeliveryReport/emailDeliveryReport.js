@@ -6,6 +6,7 @@ import emailRecipientNameLabel from '@salesforce/label/c.emailRecipientNameLabel
 import emailEmailLabel from '@salesforce/label/c.emailEmailLabel';
 import emailErrorMessageLabel from '@salesforce/label/c.emailErrorMessageLabel';
 import emailDeliveryReportHeading from '@salesforce/label/c.emailDeliveryReportHeading';
+import emailSentSuccessMsg from '@salesforce/label/c.emailSentSuccessMsg';
 
 export default class EmailDeliveryReport extends LightningElement {
     label = {
@@ -21,7 +22,7 @@ export default class EmailDeliveryReport extends LightningElement {
     recipients;
 
     @api
-    emailSendErrors;
+    emailSendResult;
 
     get columns() {
         const columns = [
@@ -53,12 +54,23 @@ export default class EmailDeliveryReport extends LightningElement {
         return columns;
     }
 
+    get hasSuccess() {
+        return this.emailSendResult?.successCount > 0;
+    }
+
+    get successCountMsg() {
+        return emailSentSuccessMsg.replaceAll(
+            '{0}',
+            this.emailSendResult.successCount
+        );
+    }
+
     get hasErrors() {
-        return Object.keys(this.emailSendErrors).length > 0;
+        return !!this.emailSendResult?.hasErrors;
     }
 
     get errors() {
-        const errorMap = new Map(Object.entries(this.emailSendErrors));
+        const errorMap = new Map(Object.entries(this.emailSendResult.errors));
 
         const errors = [];
 

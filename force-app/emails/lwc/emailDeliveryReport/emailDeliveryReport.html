@@ -1,5 +1,9 @@
 <template>
     <lightning-quick-action-panel header={label.emailDeliveryReportHeading}>
+        <h3 class="slds-text-heading_small slds-m-bottom_medium" lwc:if={hasSuccess}>
+            {successCountMsg}
+        </h3>
+
         <h3 class="slds-text-heading_small slds-m-bottom_medium">
             {label.emailNotSentHeading}
         </h3>

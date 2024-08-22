@@ -187,13 +187,13 @@ export default class SendEmailsAction extends LightningElement {
     /**
      * If there were any errors while sending the email, they will be saved here.
      */
-    emailSendErrors = {};
+    emailSendResult;
 
     /**
      * Were there any emails while sending the email?
      */
     get hasEmailSendErrors() {
-        return Object.keys(this.emailSendErrors).length > 0;
+        return !!this.emailSendResult?.hasErrors;
     }
 
     /**
@@ -214,11 +214,11 @@ export default class SendEmailsAction extends LightningElement {
 
         sendEmail({emailRequest})
             .then((result) => {
-                if (Object.keys(result.errors).length > 0) {
+                if (result.hasErrors) {
                     // Some error messages for some recipients were returned,
                     // so save the errors (which should cause the delivery
                     // report to be shown)
-                    this.emailSendErrors = result.errors;
+                    this.emailSendResult = result;
                 } else {
                     // No error messages were returned, so we can consider all
                     // emails successfully sent.  Close the modal and show a
@@ -227,7 +227,7 @@ export default class SendEmailsAction extends LightningElement {
                     this.dispatchEvent(new ShowToastEvent({
                         title: emailSentSuccess,
                         message: emailSentSuccessMsg,
-                        messageData: [`${emailRequest.targetObjectIds.length}`],
+                        messageData: [`${result.successCount}`],
                         variant: "success"
                     }));
                 }
