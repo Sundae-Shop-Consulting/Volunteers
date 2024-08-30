@@ -13,8 +13,8 @@
         <categories>Volunteers,Error</categories>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>Error shown when no assigned volunteers</shortDescription>
-        <value>No volunteers assigned.</value>
+        <shortDescription>Error shown when no assigned active volunteers</shortDescription>
+        <value>No active volunteers assigned.</value>
     </labels>
     <labels>
         <fullName>errorGeneric</fullName>

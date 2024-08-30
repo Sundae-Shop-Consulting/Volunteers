@@ -5,9 +5,9 @@
  */
 public with sharing class VolunteerAssignmentService {
     /**
-     * Return a set of Contact ids of volunteers that are assigned to the given
-     * VolunteerPosition__c, VolunteerShift__c, or VolunteerActivity__c
-     * recordId.
+     * Return a set of Contact ids of volunteers that are actively assigned to
+     * the given VolunteerPosition__c, VolunteerShift__c, or
+     * VolunteerActivity__c recordId.
      *
      * Note that this returns a *set* of Contact ids based on the assignment
      * records visible to the current running user.  If a volunteer is assigned
@@ -23,7 +23,8 @@ public with sharing class VolunteerAssignmentService {
         if (sot == VolunteerShift__c.sObjectType) {
             Set<Schema.SObjectField> fields = new Set<Schema.SObjectField>{
                 VolunteerShiftAssignment__c.VolunteerContact__c,
-                VolunteerShiftAssignment__c.VolunteerShift__c
+                VolunteerShiftAssignment__c.VolunteerShift__c,
+                VolunteerShiftAssignment__c.Active__c
             };
 
             if (!isAccessible(fields)) {
@@ -34,6 +35,7 @@ public with sharing class VolunteerAssignmentService {
                 SELECT VolunteerContact__c
                 FROM VolunteerShiftAssignment__c
                 WHERE VolunteerShift__c = :recordId
+                AND Active__c = true
             ]) {
                 assignedVolunteerIds.add(assignment.VolunteerContact__c);
             }
@@ -42,7 +44,8 @@ public with sharing class VolunteerAssignmentService {
         if (sot == VolunteerPosition__c.sObjectType) {
             Set<Schema.SObjectField> fields = new Set<Schema.SObjectField>{
                 VolunteerPositionAssignment__c.VolunteerContact__c,
-                VolunteerPositionAssignment__c.VolunteerPosition__c
+                VolunteerPositionAssignment__c.VolunteerPosition__c,
+                VolunteerPositionAssignment__c.Active__c
             };
 
             if (!isAccessible(fields)) {
@@ -53,6 +56,7 @@ public with sharing class VolunteerAssignmentService {
                 SELECT VolunteerContact__c
                 FROM VolunteerPositionAssignment__c
                 WHERE VolunteerPosition__c = :recordId
+                AND Active__c = true
             ]) {
                 assignedVolunteerIds.add(assignment.VolunteerContact__c);
             }
@@ -61,7 +65,8 @@ public with sharing class VolunteerAssignmentService {
         if (sot == VolunteerActivity__c.sObjectType) {
             Set<Schema.SObjectField> fields = new Set<Schema.SObjectField>{
                 VolunteerActivityAssignment__c.VolunteerContact__c,
-                VolunteerActivityAssignment__c.VolunteerActivity__c
+                VolunteerActivityAssignment__c.VolunteerActivity__c,
+                VolunteerActivityAssignment__c.Active__c
             };
 
             if (!isAccessible(fields)) {
@@ -69,9 +74,10 @@ public with sharing class VolunteerAssignmentService {
             }
 
             for (VolunteerActivityAssignment__c assignment : [
-                    SELECT VolunteerContact__c
-                    FROM VolunteerActivityAssignment__c
-                    WHERE VolunteerActivity__c = :recordId
+                SELECT VolunteerContact__c
+                FROM VolunteerActivityAssignment__c
+                WHERE VolunteerActivity__c = :recordId
+                AND Active__c = true
             ]) {
                 assignedVolunteerIds.add(assignment.VolunteerContact__c);
             }
