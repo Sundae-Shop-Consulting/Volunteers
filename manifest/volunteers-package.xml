@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>TestDataFactoryBase</members>
+        <members>TestDataFactoryScenarios</members>
+        <members>VolunteerHoursCalculations</members>
+        <members>VolunteerHoursCalculations_TEST</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>VolunteerHoursTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
         <members>Address.AddressCompactLayout</members>
         <name>CompactLayout</name>
     </types>
@@ -105,6 +116,7 @@
         <members>Volunteer_Position_Record_Page</members>
         <members>Volunteer_Shift_Record_Page</members>
         <members>Volunteers_UtilityBar</members>
+        <members>Volunteer_Home_Page
         <name>FlexiPage</name>
     </types>
     <types>
@@ -126,6 +138,7 @@
         <members>VolunteerHoursLog__c.All</members>
         <members>VolunteerPosition__c.All</members>
         <members>VolunteerShift__c.All</members>
+        <members>VolunteerPositionAssignment__c.Open_Applications</members>
         <name>ListView</name>
     </types>
     <types>

@@ -3,7 +3,8 @@
     <fullName>StartDate__c</fullName>
     <externalId>false</externalId>
     <label>Start Date</label>
-    <required>false</required>
+    <formula>DATEVALUE(StartDateTime__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Date</type>

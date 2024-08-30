@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>dlrs__AggregateResultField__c</field>
-        <value xsi:type="xsd:string">%%%NAMESPACE%%%FirstVolunteerDate__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%LastVolunteerDate__c</value>
     </values>
     <values>
         <field>dlrs__CalculationMode__c</field>
@@ -36,15 +36,15 @@
     </values>
     <values>
         <field>dlrs__Description__c</field>
-        <value xsi:type="xsd:string">The date of the Start Date for the latest Volunteer Hours Log associated with this Contact.</value>
+        <value xsi:type="xsd:string">The date of the End Date for the latest Volunteer Hours Log associated with this Contact.</value>
     </values>
     <values>
         <field>dlrs__FieldToAggregate__c</field>
-        <value xsi:type="xsd:string">%%%NAMESPACE%%%StartDate__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%EndDate__c</value>
     </values>
     <values>
         <field>dlrs__FieldToOrderBy__c</field>
-        <value xsi:type="xsd:string">%%%NAMESPACE%%%StartDate__c</value>
+        <value xsi:type="xsd:string">%%%NAMESPACE%%%EndDate__c</value>
     </values>
     <values>
         <field>dlrs__ParentObject__c</field>
