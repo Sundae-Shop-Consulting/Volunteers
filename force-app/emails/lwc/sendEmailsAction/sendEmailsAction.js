@@ -160,9 +160,10 @@ export default class SendEmailsAction extends LightningElement {
     }
 
     /**
-     * A list of originator options.  This would include the default option of
-     * the current user's email address as well as any org-wide email addresses
-     * the current user has access to.
+     * A list of originator options.  This would potentially include the
+     * current user's email address as well as any org-wide email addresses the
+     * current user has access to.  If this is empty, it might be because there
+     * aren't any verified originator email address options available.
      */
     fromAddressOptions = [];
 
@@ -171,7 +172,7 @@ export default class SendEmailsAction extends LightningElement {
      */
     @wire(getFromAddressOptions)
     wiredFromAddressOptions(result) {
-        if (result.data) {
+        if (Array.isArray(result.data)) {
             this.fromAddressOptions = result.data;
         } else if (result.error) {
             let messages = [emailErrorGetFromAddress];
@@ -204,13 +205,10 @@ export default class SendEmailsAction extends LightningElement {
         const emailRequest = {
             subject: event?.detail?.subject,
             htmlBody: event?.detail?.htmlBody,
+            orgWideEmailAddressId: event?.detail?.orgWideEmailAddressId,
             targetObjectIds: this.recipients?.map(r => r.id),
             whatId: this.whatId,
         };
-
-        if (event?.detail?.orgWideEmailAddressId) {
-            emailRequest.orgWideEmailAddressId = event.detail.orgWideEmailAddressId;
-        }
 
         sendEmail({emailRequest})
             .then((result) => {

@@ -58,7 +58,7 @@ public with sharing class EmailService {
             message.setWhatId(email.whatId);
             message.setTreatBodiesAsTemplate(true);
 
-            if (email.orgWideEmailAddressId != null) {
+            if (email.hasOrgWideEmailAddressId()) {
                 message.setOrgWideEmailAddressId(email.orgWideEmailAddressId);
             }
 

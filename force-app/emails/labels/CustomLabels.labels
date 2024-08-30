@@ -272,4 +272,12 @@
         <shortDescription>Error shown when invalid org-wide address</shortDescription>
         <value>User could not retrieve org wide email addresses.  Please review your security configuration.</value>
     </labels>
+    <labels>
+        <fullName>errorNoVerifiedOriginators</fullName>
+        <categories>Email,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error shown when no verified sending addresses</shortDescription>
+        <value>No verified email addresses available to choose from.  Please ensure your email address is verified.</value>
+    </labels>
 </CustomLabels>

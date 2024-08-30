@@ -31,4 +31,17 @@ public class Email {
      * recipients.
      */
     public List<Id> targetobjectIds;
+
+    /**
+     * Does this email have an org wide email address id specified?
+     *
+     * Note this means that not only is an id value specified for the org-wide
+     * email address id, but the id is of the proper type.
+     */
+    public Boolean hasOrgWideEmailAddressId() {
+        return (
+            this.orgWideEmailAddressId != null
+            && this.orgWideEmailAddressId.getSObjectType() == OrgWideEmailAddress.sObjectType
+        );
+    }
 }

@@ -25,13 +25,23 @@ public class EmailAddress {
     public String address;
 
     /**
+     * Is the email address "verified"?  This applies to email addresses which
+     * are used for sending emails and represents whether or not the email
+     * address ownership has been verified by Salesforce via clicking on a
+     * verification link which has been sent to the address (or some other
+     * ownership verification mechanism).
+     */
+    public Boolean isVerified = false;
+
+    /**
      * Construct an EmailAddress given a record id, display name, and a
      * formatted email address.
      */
-    public EmailAddress(Id id, String displayName, String address) {
+    public EmailAddress(Id id, String displayName, String address, Boolean isVerified) {
         this.id = id;
         this.displayName = displayName;
         this.address = address;
+        this.isVerified = isVerified;
     }
 
     /**
@@ -42,7 +52,8 @@ public class EmailAddress {
         this(
             orgWideEmailAddress.Id,
             orgWideEmailAddress.DisplayName,
-            orgWideEmailAddress.Address
+            orgWideEmailAddress.Address,
+            orgWideEmailAddress.IsVerified
         );
     }
 

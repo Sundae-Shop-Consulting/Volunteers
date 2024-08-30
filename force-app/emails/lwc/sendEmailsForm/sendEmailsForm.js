@@ -17,6 +17,7 @@ import emailSubjectLabel from '@salesforce/label/c.emailSubjectLabel';
 import emailEnterSubject from '@salesforce/label/c.emailEnterSubject';
 import emailMessageLabel from '@salesforce/label/c.emailMessageLabel';
 import emailRelatedToLabel from '@salesforce/label/c.emailRelatedToLabel';
+import errorNoVerifiedOriginators from '@salesforce/label/c.errorNoVerifiedOriginators';
 
 /**
  * This component is a UI component, intended to display and manage a form
@@ -47,15 +48,42 @@ export default class SendEmailsForm extends LightningElement {
      * A list of originator options to be used to populate the "From" form
      * element. This matches the format expected by lightning-select options.
      *
-     * Some strange assumptions are included here, like that the list includes
-     * an option with a blank value which acts as the default (see
-     * orgWideEmailAddressId below).  In this case, the user's own email
-     * address is considered the default and only if they select an option from
-     * this list would they be overriding that choice by selecting an org-wide
-     * email address.
+     * The first option is treated as the default.
+     */
+    _fromAddressOptions = [];
+
+    /**
+     * Get a list of from address options.
+     */
+    get fromAddressOptions() {
+        return this._fromAddressOptions;
+    }
+
+    /**
+     * Set the fromAddressOptions via component property.
+     *
+     * This setter will do some validation to ensure that the provided values
+     * are not an empty list, or set an error message on the form element if
+     * necessary.  This setter will also select the first value in the options
+     * list (if any) and use it as a default value.
      */
     @api
-    fromAddressOptions = [];
+    set fromAddressOptions(fromAddressOptions) {
+        if (Array.isArray(fromAddressOptions)) {
+            const select = this.template.querySelector('lightning-select[data-id="select-from"]') || {setCustomValidity: () => {}, reportValidity: () => {}};
+
+            if (fromAddressOptions.length > 0) {
+                this.orgWideEmailAddressId = fromAddressOptions[0].value;
+                select.setCustomValidity('');
+            } else {
+                select.setCustomValidity(errorNoVerifiedOriginators);
+                select.reportValidity();
+            }
+
+
+            this._fromAddressOptions = fromAddressOptions;
+        }
+    }
 
     /**
      * The org-wide email address to use as originator, if any.
@@ -68,6 +96,13 @@ export default class SendEmailsForm extends LightningElement {
      */
     handleFromChange(event) {
         this.orgWideEmailAddressId = event.target.value;
+    }
+
+    /**
+     * The "From" field is valid if the orgWideEmailAddressId field is set.
+     */
+    get isFromValid() {
+        return !!this.orgWideEmailAddressId;
     }
 
 
@@ -437,7 +472,8 @@ export default class SendEmailsForm extends LightningElement {
      * the form are considered valid.
      */
     get isFormValid() {
-        return this.isRecipientsValid
+        return this.isFromValid
+            && this.isRecipientsValid
             && this.isSubjectValid
             && this.isBodyValid;
     }

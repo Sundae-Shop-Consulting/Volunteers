@@ -228,10 +228,18 @@ public with sharing class EmailController {
      * sending an email.  This includes the user's own email address as well as
      * any verified, enabled for user selection org-wide email addresses.
      *
+     * If the user's own email address is not valid for sending (i.e. it is not
+     * verified) then it will not be included as a "From" address option.
+     *
      * If the org-wide email addresses can not be retrieved for any reason
      * (likely relevant objects are not accessible to the current user) then
      * org-wide email addresses are silently omitted from the returned list and
      * no exception is thrown.
+     *
+     * In the case where there are no verified/available org wide email
+     * addresses and the user's own email address is not verified (i.e. not
+     * valid for sending emails), then the returned list of options can be
+     * empty.
      */
     @AuraEnabled(cacheable=true)
     public static List<AddressOption> getFromAddressOptions() {
@@ -239,7 +247,11 @@ public with sharing class EmailController {
 
         List<AddressOption> addresses = new List<AddressOption>();
 
-        addresses.add(new AddressOption(service.getCurrentUserEmailAddress()));
+        EmailAddress currentEmail = service.getCurrentUserEmailAddress();
+
+        if (currentEmail.isVerified) {
+            addresses.add(new AddressOption(currentEmail));
+        }
 
         try {
             for (EmailAddress orgWideAddress : service.getOrgWideEmailAddresses()) {
@@ -273,15 +285,11 @@ public with sharing class EmailController {
         /**
          * Get the option value for this AddressOption, which for org-wide
          * email addresses will be the record id of the OrgWideEmailAddress
-         * record, and otherwise an empty string.
+         * record, and for user's own email address will be their user id.
          */
         @AuraEnabled
         public String getValue() {
-            if (address.getSObjectType() == OrgWideEmailAddress.sObjectType) {
-                return address.id;
-            } else {
-                return '';
-            }
+            return address.id;
         }
 
         /**

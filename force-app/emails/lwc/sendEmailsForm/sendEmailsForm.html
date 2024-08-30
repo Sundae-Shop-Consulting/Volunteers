@@ -6,7 +6,9 @@
             label={label.emailFromLabel}
             value={orgWideEmailAddressId}
             options={fromAddressOptions}
-            onchange={handleFromChange}>
+            onchange={handleFromChange}
+            data-id="select-from"
+            required>
         </lightning-select>
 
         <div class={recipientsFormElementClass}>
