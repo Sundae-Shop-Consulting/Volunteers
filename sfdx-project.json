@@ -3,6 +3,9 @@
         {
             "path": "force-app/volunteers",
             "default": true
+        },
+        {
+            "path": "force-app/emails"
         }
     ],
     "namespace": "v4ustest",

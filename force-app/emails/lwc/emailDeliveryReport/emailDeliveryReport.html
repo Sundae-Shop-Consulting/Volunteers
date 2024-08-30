@@ -1,0 +1,27 @@
+<template>
+    <lightning-quick-action-panel header={label.emailDeliveryReportHeading}>
+        <h3 class="slds-text-heading_small slds-m-bottom_medium" lwc:if={hasSuccess}>
+            {successCountMsg}
+        </h3>
+
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">
+            {label.emailNotSentHeading}
+        </h3>
+
+        <lightning-datatable
+            data={errors}
+            columns={columns}
+            lwc:if={hasErrors}
+            key-field="id"
+            hide-checkbox-column>
+        </lightning-datatable>
+
+        <div slot="footer">
+            <lightning-button
+                variant="brand"
+                label={label.emailCloseButton}
+                onclick={handleClose}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>
